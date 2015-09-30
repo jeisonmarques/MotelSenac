@@ -18,7 +18,7 @@ foreach ($result as $key => $val) {
     printr(sprintf("Chave: %s => Valor: %s", $key, $val));
 		
 }
-foreach ($result as $key => $value) {
+foreach ($result as $key => $value[0]) {
     echo "Key: $key; Value: $value<br />\n";
 }
 
