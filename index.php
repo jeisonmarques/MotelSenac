@@ -16,7 +16,10 @@ $result = $user->queryAll("SELECT * FROM Motel");
 
 foreach ($result as $key => $val) {
     printr(sprintf("Chave: %s => Valor: %s", $key, $val));
+		
 }
-
+foreach ($result as $key => $value) {
+    echo "Key: $key; Value: $value<br />\n";
+}
 
 ?>
