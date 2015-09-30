@@ -1,25 +1,21 @@
 <?php
 try 
 {
-	print( "Connecting to SQL Server." );
+	print( "Connecting to SQL Server.<br/>" );
 	$conn = new PDO ( "sqlsrv:server = tcp:v8xjjhajlw.database.windows.net,1433; Database = motelAtVQaSrngqJ", "apl", "Sjm157304@");
 	$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-	print( "Connected to SQL Server." );
+	print( "Connected to SQL Server.<br/>" );
 	
-	$query = $conn->prepare("select * FROM Motel");
-    $query->execute();
+	$data = $conn->query('SELECT * FROM dbo.Motel' . $conn->quote($name));
  
-      for($i=0; $row = $query->fetch(); $i++){
-        echo $i." - ".$row['Nome']."<br/>";
-      }
- 
-      unset($conn); 
-      unset($query);
+    foreach($data as $row) {
+        print_r($row); 
+    }
 	
 }
 catch ( PDOException $e )
 {
-	print( "Error connecting to SQL Server." );
+	print( "Error connecting to SQL Server.<br/>" );
 	die(print_r($e));
 }
 ?>
