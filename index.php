@@ -9,12 +9,14 @@ function printr($p)
     echo "</pre>";
 }
 
-use Connection\Database\PdoConnection;
+use Connection\Dao\User;
 
-$pdo = new PdoConnection();
-$conn = $pdo->getInstance();
+$user = new User();
+$result = $user->query("SELECT * FROM Motel");
 
-printr($conn);
+foreach ($result as $key => $val) {
+    printr(sprintf("Chave: %s => Valor: %s", $key, $val));
+}
 
 
 ?>
