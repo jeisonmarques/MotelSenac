@@ -23,7 +23,8 @@ class PdoConnection
             $this->pdo = new PDO("sqlsrv:server=$server ; Database = $database", $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(\PDOException $e) {
-            throw new \PDOException($e->getMessage());
+            printr($e->getTrace());
+            printr(sprintf("%s\n%s\n%s\n%s", $e->getMessage(), $e->getCode(), $e->getFile(), $e->getTraceAsString()));exit;
         }
     }
 
