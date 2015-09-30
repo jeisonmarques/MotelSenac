@@ -22,4 +22,11 @@ class User extends PdoConnection
 
         return $query->fetch(\PDO::FETCH_ASSOC);
     }
+	
+	public function queryAll($sql)
+    {
+         $query = $this->pdo->query($sql);
+
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }
