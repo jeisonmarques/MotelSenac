@@ -22,4 +22,6 @@ foreach ($result as $key => $value[0]) {
     echo "Key: $key; Value: $value<br />\n";
 }
 
+printr($result);
+
 ?>
