@@ -22,6 +22,11 @@ foreach ($result as $key => $value[0]) {
     echo "Key: $key; Value: $value<br />\n";
 }
 
-printr($result);
+foreach ($result as $key => $val) {
+    printr($val["IdMotel"]);
+	printr($val["Nome"]);
+	printr($val["Latitude"]);
+	printr($val["Longitude"]);
+}
 
 ?>
