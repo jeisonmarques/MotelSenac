@@ -1,25 +1,12 @@
 <?php
-
-require_once "vendor/autoload.php";
-
-function printr($p)
-{
-    echo "<pre>";
-    print_r($p);
-    echo "</pre>";
+$mysql_host = "localhost"; # Usually doesn"t need modified
+$mysql_db = " "; # Database name
+$mysql_user = ""; # Username
+$mysql_pass = ""; # Password
+$link = mysql_connect ($mysql_host,$mysql_user,$mysql_pass);
+if (!$link) {
+  die('Could not connect: ' . mysql_error());
 }
-
-use Connection\Dao\User;
-
-$user = new User();
-$result = $user->queryAll("SELECT * FROM Motel");
-
-
-foreach ($result as $key => $val) {
-    printr($val["IdMotel"]);
-	printr($val["Nome"]);
-	printr($val["Latitude"]);
-	printr($val["Longitude"]);
-}
-
+echo 'Connected successfully';
+mysql_close($link);
 ?>
