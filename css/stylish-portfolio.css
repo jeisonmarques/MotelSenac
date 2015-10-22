@@ -23,6 +23,7 @@ body {
 }
 
 a#menu-close {
+    display: none;
     margin-top: 98%;
 }
  
