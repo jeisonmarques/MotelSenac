@@ -193,6 +193,7 @@
             var directionsService = new google.maps.DirectionsService;
             var map = new google.maps.Map(document.getElementById('top'), {
                 center: { lat: -31, lng: -51 },
+                scrollwheel: false,
                 zoom: 14
             });
             directionsDisplay.setMap(map);
@@ -288,7 +289,7 @@
         $("#sidebar-wrapper").toggleClass("active");
     });
 
-    // Scrolls to the selected menu item on the page
+    // Scrolls to the selected menu item on the page - teste
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
