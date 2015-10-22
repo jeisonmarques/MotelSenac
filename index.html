@@ -34,7 +34,9 @@
 <body>
 
     <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i>
+    <img id="arrowMenu" src="img/larrow-26.png">
+    </a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -291,6 +293,19 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
+        if($(this).hasClass('rot')) {
+    $(this).removeClass('rot').rotate({
+        duration: 200,
+        angle: 180,
+        animateTo:0
+        });
+        } else {
+            $(this).addClass('rot').rotate({
+                duration: 200,
+                angle: 0,
+                animateTo:180});
+        };
+
     });
 
     // Scrolls to the selected menu item on the page - teste
