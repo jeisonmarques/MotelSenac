@@ -22,7 +22,10 @@ body {
     vertical-align: middle;
 }
 
-
+a#menu-close {
+    margin-top: 98%;
+}
+ 
 .text-vertical-center h1 {
     margin: 0;
     padding: 0;
@@ -155,7 +158,7 @@ hr.small {
 }
 
 .toggle {
-    margin: 5px 5px 0 0;
+    margin: 4px 5px 0 0;
 }
 
 /* Header */
