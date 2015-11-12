@@ -34,8 +34,11 @@
 <body>
 
     <!-- Navigation -->
+    <a id="button-to-page" href="#ancora" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i>
+        <img id="arrowMenu" src="img/arrow_down.png">
+    </a>
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i>
-    <img id="arrowMenu" src="img/larrow-26.png">
+        <img id="arrowMenu" src="img/larrow-26.png">
     </a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -78,6 +81,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
+                    <a name="ancora" id="ancora"></a>
                     <h2>Parceiros</h2>
                     <hr class="small">
                     <div class="row">
@@ -218,6 +222,9 @@
 
                     var url = "http://api-motel.azurewebsites.net/Roteirizador.svc/mapa/" + pos.lat + "/" + pos.lng;
 
+
+
+
                     $.getJSON(url, function (data) {
                         for (var i = 0; i < data.GeraRotaResult.length; i++) {
 
@@ -230,6 +237,16 @@
                             }
                             else
                             {
+                                var contentString = '<div id="content">' 
+                                    + data.GeraRotaResult[i].Longitude 
+                                    + '</div>'
+                                    + '<a href="page.html">'
+                                    + '<span>Mais Informações</span>'
+                                    + '</a>';
+                                var infowindow = new google.maps.InfoWindow({
+                                    content: contentString
+                                  });
+
                                 var marker = new google.maps.Marker({
                                     'position': new google.maps.LatLng(data.GeraRotaResult[i].Latitude, data.GeraRotaResult[i].Longitude),
                                     'map': map,
@@ -290,6 +307,14 @@
     });
 
     // Opens the sidebar menu
+
+    $('#button-to-page').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 500);
+        return false;
+    });
+
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");

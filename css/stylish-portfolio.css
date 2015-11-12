@@ -139,6 +139,12 @@ hr.small {
     right: 0;
 }
 
+#button-to-page {
+    z-index: 9999;
+    position: fixed;
+    top: 85%;
+    right: 47%;
+}
 #logo {
     position: relative;
     z-index: 1;
