@@ -148,6 +148,23 @@
             </div>
             <!-- /.row -->
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Modal Body</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+    </div>
+  </div>
+</div>
         <!-- /.container -->
     </section>
 
@@ -198,7 +215,11 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
- function initMap() {
+            function modalClick(id) {
+                    console.log('teste ok ' + id);
+            }
+
+            function initMap() {
             var directionsDisplay = new google.maps.DirectionsRenderer;
             var directionsService = new google.maps.DirectionsService;
             var map = new google.maps.Map(document.getElementById('top'), {
@@ -222,9 +243,6 @@
 
                     var url = "http://api-motel.azurewebsites.net/Roteirizador.svc/mapa/" + pos.lat + "/" + pos.lng;
 
-
-
-
                     $.getJSON(url, function (data) {
                         for (var i = 0; i < data.GeraRotaResult.length; i++) {
 
@@ -238,14 +256,14 @@
                             else
                             {
                                 var contentString = '<div id="content">' 
-                                    + data.GeraRotaResult[i].Longitude 
-                                    + '</div>'
-                                    + '<a href="page.html">'
-                                    + '<span>Mais Informações</span>'
-                                    + '</a>';
-                                var infowindow = new google.maps.InfoWindow({
-                                    content: contentString
-                                  });
+                                    + data.GeraRotaResult[i].NomeMotel + '</br>' 
+
+                                    + '<button type="button" onclick="modalClick('+data.GeraRotaResult[i].IdMotel+')"'
+                                    + 'data-toggle="modal" '
+                                    + 'data-target="#basicModal">Click to open Modal</button></div>';
+                               
+                                var infowindow = new google.maps.InfoWindow();
+
 
                                 var marker = new google.maps.Marker({
                                     'position': new google.maps.LatLng(data.GeraRotaResult[i].Latitude, data.GeraRotaResult[i].Longitude),
@@ -253,12 +271,19 @@
                                     'title': data.GeraRotaResult[i].Nome
                                 });
 
-                                google.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.open(map, marker);
-                                });
-                            }
+                                createInfoWindow(marker, contentString);
 
-                            console.log(data.GeraRotaResult[i].DistanciaTotal);
+                                //google.maps.event.addListener(marker, 'click', function () {
+                                    //infowindow.open(map, marker);
+                                //});
+                                function createInfoWindow(marker, contentString) {    
+                                google.maps.event.addListener(marker, 'click', function() {
+  
+                                                infowindow.setContent(contentString);
+                                                infowindow.open(map, this);
+                                            });
+                                }
+                            }
                         }
                     });
 

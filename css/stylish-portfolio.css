@@ -16,6 +16,10 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+h4#myModalLabel {
+    color: black !important;
+}
+
 .text-vertical-center {
     display: table-cell;
     text-align: center;
