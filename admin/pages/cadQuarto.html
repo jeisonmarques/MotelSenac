@@ -21,25 +21,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
     <?php
       include "classes/Cliente_Quartos.php";
       include "dao/Cliente_QuartosDAO.php";
-      
-      <!--
-      if(isset($_REQUEST["acao"]) == "editar") {
-              $id      = $_REQUEST["id"];
-              $dao     = new Cliente_QuartosDAO();
-              $dados   = $dao->buscarDados($id);
-              $destino = "editarcliente_quartos.php";
-              $hidden  = true;
-      } else {
-              $dados = new Cliente_Quartos();
-              $destino = "cadastrarcliente_quartos.php";
-              $hidden = false;
-      }
-      -->
     ?>
+    
+  <body>
     <div id="wrapper">
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
