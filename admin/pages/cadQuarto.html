@@ -26,7 +26,6 @@
       include "classes/Cliente_Quartos.php";
       include "dao/Cliente_QuartosDAO.php";
      
-     /*
       if(isset($_REQUEST["acao"]) == "editar") {
               $id      = $_REQUEST["id"];
               $dao     = new Cliente_QuartosDAO();
@@ -38,7 +37,6 @@
               $destino = "cadastrarcliente_quartos.php";
               $hidden = false;
       }
-      */
     ?>
     <div id="wrapper">
       <!-- Navigation -->
@@ -153,12 +151,18 @@
                         <input type="file">
                       </div>
 
+                  <!--
+
                      <?php if($hidden == false) { ?>
+                  -->
                         <input type="submit" name="acao" value="Salvar" class="btn btn-primary"/>
-                     <?php } else { ?>
+                  <!--   <?php } else { ?>
+                -->
                         <input name="id"        type="hidden"   value="<?php echo $id; ?>" />
                         <input type="submit"    name="acao"     value="Alterar"    class="btn btn-primary"/>
+                   <!--
                      <?php } ?>
+                   -->
                      <button type="submit" class="btn btn-danger">Cancelar</button>     
 
                     </form>
