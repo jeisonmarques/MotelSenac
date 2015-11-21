@@ -22,7 +22,24 @@
     <![endif]-->
   </head>
   <body>
- 
+    <?php
+      include "classes/Cliente_Quartos.php";
+      include "dao/Cliente_QuartosDAO.php";
+     
+     /*
+      if(isset($_REQUEST["acao"]) == "editar") {
+              $id      = $_REQUEST["id"];
+              $dao     = new Cliente_QuartosDAO();
+              $dados   = $dao->buscarDados($id);
+              $destino = "editarcliente_quartos.php";
+              $hidden  = true;
+      } else {
+              $dados = new Cliente_Quartos();
+              $destino = "cadastrarcliente_quartos.php";
+              $hidden = false;
+      }
+      */
+    ?>
     <div id="wrapper">
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -121,23 +138,6 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-lg-6">
-
-                    <?php
-                        include "classes/Cliente_Quartos.php";
-                        include "dao/Cliente_QuartosDAO.php";
-                       
-                        if(isset($_REQUEST["acao"]) == "editar") {
-                                $id      = $_REQUEST["id"];
-                                $dao     = new Cliente_QuartosDAO();
-                                $dados   = $dao->buscarDados($id);
-                                $destino = "editarcliente_quartos.php";
-                                $hidden  = true;
-                        } else {
-                                $dados = new Cliente_Quartos();
-                                $destino = "cadastrarcliente_quartos.php";
-                                $hidden = false;
-                        }
-                    ?>
                     <form role="form" action="<?php echo $destino; ?>" method="post">
                       <div class="form-group">                      
                         <label>Descrição</label>
