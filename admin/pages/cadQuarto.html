@@ -22,6 +22,22 @@
     <![endif]-->
   </head>
   <body>
+    <?php
+        include "classes/Cliente_Quartos.php";
+        include "dao/Cliente_QuartosDAO.php";
+       
+        if(isset($_REQUEST["acao"]) == "editar") {
+                $id      = $_REQUEST["id"];
+                $dao     = new Cliente_QuartosDAO();
+                $dados   = $dao->buscarDados($id);
+                $destino = "editarcliente_quartos.php";
+                $hidden  = true;
+        } else {
+                $dados = new Cliente_Quartos();
+                $destino = "cadastrarcliente_quartos.php";
+                $hidden = false;
+        }
+    ?> 
     <div id="wrapper">
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -74,7 +90,8 @@
                 <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Principal </a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Cadastro <span class="fa arrow"></span></a>
+                <a href="#">
+                  <i class="fa fa-bar-chart-o fa-fw"></i> Cadastro <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                   <li>
                     <a href="cadCliente.html"> Cadastro Clientes</a>
@@ -85,9 +102,17 @@
                 </ul>
                 <!-- /.nav-second-level -->
               </li>
-			  <li>
-                <a href="relatorio.html"><i class="fa fa-dashboard fa-fw"></i> Relatórios </a>
-			  </li>
+              <li>
+                      <a href="relatorio.html"><i class="fa fa-dashboard fa-fw"></i> Consulta <span class="fa arrow"></span></a> </a>
+                      <ul class="nav nav-second-level">
+                          <li>
+                              <a href="conCliente.html"> Consulta Clientes</a>
+                          </li>
+                          <li>
+                              <a href="conQuarto.html"> Consulta Quartos </a>
+                          </li>
+                      </ul>
+              </li>
             </ul>
           </div>
           <!-- /.sidebar-collapse -->
@@ -109,78 +134,29 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-lg-6">
-                    <form role="form" action="insereQuarto.php" method="post">
+                    <form role="form" action="<?php echo $destino; ?>" method="post">
                       <div class="form-group">                      
                         <label>Descrição</label>
                         <input id="descricao" class="form-control" placeholder="Descrição" required="required">
+                        <label>Descrição</label>
+                        <input id="cliente_id" class="form-control" placeholder="Cliente" required="required">
                         <label>Valor Hora</label>
-                        <input id="valorHora" class="form-control" placeholder="Valor Hora" required="required">
+                        <input id="valor_hora" class="form-control" placeholder="Valor Hora" required="required">
                       </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="banheira" >Banheira
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="arCondicionado">Ar Condicionado
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="lareira">Lareira
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="sauna">Sauna
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="cadeiraErotica">Cadeira Erótica
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="frigobar">Frigobar
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="luzNegra">Luz Negra
-                            </label>												
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="canaisEroticos">Canais Eróticos
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="quartosTematicos">Quarto Temático
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                            <input type="checkbox" value="poleDance">Pole Dance
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+
                       <div class="form-group">
                         <label>Fotos</label>
                         <input type="file">
                       </div>
-                      <button type="subimit" class="btn btn-primary">Salvar</button>					
-                      <button type="subimit" class="btn btn-success">Editar</button>
-                      <button type="subimit" class="btn btn-danger">Cancelar</button>			
+
+                     <?php if($hidden == false) { ?>
+                        <input type="submit" name="acao" value="Salvar" class="btn btn-primary"/>
+                     <?php } else { ?>
+                        <input name="id"        type="hidden"   value="<?php echo $id; ?>" />
+                        <input type="submit"    name="acao"     value="Alterar"    class="btn btn-primary"/>
+                     <?php } ?>
+                     <button type="submit" class="btn btn-danger">Cancelar</button>     
+
                     </form>
                   </div>
                   <!-- /.col-lg-6 -->                
