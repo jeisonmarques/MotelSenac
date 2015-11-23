@@ -125,35 +125,21 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-lg-6">
-                    <form role="form" action="<?php echo $destino; ?>" method="post">
+                    <form role="form" action="cadastrarcliente_quartos.php" method="post">
                       <div class="form-group">                      
+                        <label>Cliente</label>
+                        <input id="cliente_id" class="form-control" placeholder="Cliente" required="required">
                         <label>Descrição</label>
                         <input id="descricao" class="form-control" placeholder="Descrição" required="required">
-                        <label>Descrição</label>
-                        <input id="cliente_id" class="form-control" placeholder="Cliente" required="required">
                         <label>Valor Hora</label>
                         <input id="valor_hora" class="form-control" placeholder="Valor Hora" required="required">
                       </div>
-
                       <div class="form-group">
                         <label>Fotos</label>
                         <input type="file">
                       </div>
-
-                  <!--
-
-                     <?php if($hidden == false) { ?>
-                  -->
-                        <input type="submit" name="acao" value="Salvar" class="btn btn-primary"/>
-                  <!--   <?php } else { ?>
-                -->
-                        <input name="id"        type="hidden"   value="<?php echo $id; ?>" />
-                        <input type="submit"    name="acao"     value="Alterar"    class="btn btn-primary"/>
-                   <!--
-                     <?php } ?>
-                   -->
-                     <button type="submit" class="btn btn-danger">Cancelar</button>     
-
+                        <input type="submit"    name="acao"     value="Salvar" class="btn btn-primary"/>
+                        <button type="submit"   class="btn btn-danger">Cancelar</button>     
                     </form>
                   </div>
                   <!-- /.col-lg-6 -->                
