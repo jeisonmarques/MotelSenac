@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    
+<head>    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -36,7 +35,10 @@
     <![endif]-->
 
 </head>
-
+<?php
+  include "dao/Cliente_Quartos.php";
+  $acoes = new Cliente_QuartosDAO();
+?>
 <body>
 
     <div id="wrapper">
