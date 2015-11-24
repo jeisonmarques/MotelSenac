@@ -7,14 +7,13 @@ class ClienteQuartosDAO extends BancoPDO {
         $this->conexao = BancoPDO::conexao();
     }
 
-/*
-    public function inserir($ClienteQuartos) {
+    public function inserir($clientequartos) {
         try { 
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
-            $stm->bindValue(1, $cliente_quartos->IdCliente);
-            $stm->bindValue(2, $cliente_quartos->descricao);
-            $stm->bindValue(3, $cliente_quartos->valor_hora);
+            $stm->bindValue(1, $clientequartos->IdCliente);
+            $stm->bindValue(2, $clientequartos->descricao);
+            $stm->bindValue(3, $clientequartos->valor_hora);
 
            
             if($stm->execute()) {
@@ -64,7 +63,7 @@ echo "<br> aqui 222222";
   /*  
     public function buscarDados($id) {
         try {
-            $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos WHERE id = ?");
+            $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE id = ?");
             $stm->bindValue(1, $id);
 
             $query = $stm->execute();
