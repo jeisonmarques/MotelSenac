@@ -27,7 +27,7 @@
 
       echo "<br>";
       $acoes = new Cliente_QuartosDAO();
-      echo "nao? 2222";
+      echo "aham 2222";
       $acoes->visualizar();
   ?>
 </body>

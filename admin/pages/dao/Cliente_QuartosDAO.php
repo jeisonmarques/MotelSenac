@@ -7,7 +7,7 @@ class Cliente_QuartosDAO extends BancoPDO {
         $this->conexao = BancoPDO::conexao();
     }
 
-
+/*
     public function inserir($cliente_quartos) {
         try { 
             $stm = $this->conexao->prepare(" INSERT INTO cliente_quartos (cliente_id, descricao, valor_hora) "
@@ -25,7 +25,7 @@ class Cliente_QuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-    
+  */  
     public function visualizar($id = "") {
         try { 
             if($id == "") {
