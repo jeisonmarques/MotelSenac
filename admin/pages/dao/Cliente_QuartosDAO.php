@@ -4,6 +4,7 @@ include "dao/BancoPDO.php";
 class Cliente_QuartosDAO extends BancoPDO {
 
     public function __construct() {
+        echo "funcionou isso aqui?";
         $this->conexao = BancoPDO::conexao();
     }
     /*
@@ -27,7 +28,6 @@ class Cliente_QuartosDAO extends BancoPDO {
     }
 */
     public function visualizar($id = "") {
-echo "funcionou isso aqui?";
         try { 
             if($id == "") {
                 $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos");
