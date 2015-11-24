@@ -27,18 +27,15 @@ class Cliente_QuartosDAO extends BancoPDO {
     }
   */  
     public function visualizar($id = "") {
-
-echo "<br>  entrou conexao";
-
-        $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos");
- /*       try { 
+        try { 
             if($id == "") {
                 $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos");
             } else {
                 $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos WHERE id = ?");
                 $stm->bindParam(1, $id, PDO::PARAM_INT);
             }
-
+echo "<br>  passou conexao";
+/*
             if($stm->execute()) {
                 $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
                          ."<td>ID</td>"
@@ -57,10 +54,9 @@ echo "<br>  entrou conexao";
                 $tabela .= "</table>";
                 echo $tabela;
             }
-        } catch(PDOException $e) {
+*/        } catch(PDOException $e) {
                 echo "Erro: ".$e->getMessage();
         }
-*/
     }
   /*  
     public function buscarDados($id) {
