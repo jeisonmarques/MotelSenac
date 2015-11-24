@@ -50,6 +50,7 @@ class Cliente_QuartosDAO extends BancoPDO {
                              ."</tr>"; 
                 }
                 $tabela .= "</table>";
+                echo "funcionou isso aqui?";
                 echo $tabela;
             }
         } catch(PDOException $e) {
