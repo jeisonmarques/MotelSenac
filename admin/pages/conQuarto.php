@@ -22,10 +22,10 @@
 </head>
 <body>
   <?php
-      include "dao/Cliente_QuartosDAO.php";
+      include "dao/ClienteQuartosDAO.php";
 
       echo "<br> construiu? <br> ";
-      $acoes = new Cliente_QuartosDAO();
+      $acoes = new ClienteQuartosDAO();
       echo "aham 2222 <br>";
       $acoes->visualizar();
   ?>

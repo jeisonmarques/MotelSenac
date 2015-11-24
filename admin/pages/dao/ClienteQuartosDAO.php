@@ -1,18 +1,18 @@
 <?php
 include "BancoPDO.php";
 
-class Cliente_QuartosDAO extends BancoPDO {
+class ClienteQuartosDAO extends BancoPDO {
 
     public function __construct() {
         $this->conexao = BancoPDO::conexao();
     }
 
 /*
-    public function inserir($cliente_quartos) {
+    public function inserir($ClienteQuartos) {
         try { 
-            $stm = $this->conexao->prepare(" INSERT INTO cliente_quartos (cliente_id, descricao, valor_hora) "
+            $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
-            $stm->bindValue(1, $cliente_quartos->cliente_id);
+            $stm->bindValue(1, $cliente_quartos->IdCliente);
             $stm->bindValue(2, $cliente_quartos->descricao);
             $stm->bindValue(3, $cliente_quartos->valor_hora);
 
@@ -31,29 +31,28 @@ class Cliente_QuartosDAO extends BancoPDO {
             if($id == "") {
                 $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos");
             } else {
-                $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE id = ?");
-                $stm->bindParam(1, $id, PDO::PARAM_INT);
+                $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE IdClienteQuartos = ?");
+                $stm->bindParam(1, $IdClienteQuartos, PDO::PARAM_INT);
             }
 
             if($stm->execute()) {
-/*                $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
+                $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
                          ."<td>ID</td>"
                          ."<td>CLIENTE_ID</td>"
                          ."<td>DESCRICAO</td>"
                          ."<td>VALOR_HORA</td>"
                          ."</tr>";
-                         */
+
                          echo "<br> aqui 1111";
 
                 while($dados = $stm->fetch(PDO::FETCH_OBJ)) {
 echo "<br> aqui 222222";                    
-                   /*$tabela .= "<tr>"
-                             ."<td>".$dados->id."</td>"
-                             ."<td>".$dados->cliente_id."</td>"
+                   $tabela .= "<tr>"
+                             ."<td>".$dados->IdClienteQuartos."</td>"
+                             ."<td>".$dados->IdCliente."</td>"
                              ."<td>".$dados->descricao."</td>"
                              ."<td>".$dados->valor_hora."</td>"
                              ."</tr>"; 
-                             */
                 }
                 $tabela .= "</table>";
                 echo $tabela;
