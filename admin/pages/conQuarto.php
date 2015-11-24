@@ -28,7 +28,7 @@
       $acoes = new ClienteQuartosDAO();
       $acoes->visualizar();
 
-      $acoes->inserir();
+    //  $acoes->inserir();
   ?>
 </body>
 </html>
