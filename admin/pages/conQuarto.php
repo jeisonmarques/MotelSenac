@@ -24,7 +24,7 @@
   <?php
       include "dao/Cliente_QuartosDAO.php";
 
-      echo "<br> construiu? <br>";
+      echo "<br> construiu? <br> ";
       $acoes = new Cliente_QuartosDAO();
       echo "aham 2222 <br>";
       $acoes->visualizar();
