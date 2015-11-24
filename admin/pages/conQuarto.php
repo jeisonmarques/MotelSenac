@@ -21,11 +21,13 @@
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  EITA
   <?php
+      echo "vamos exibir algo ou nao?"
       include "dao/Cliente_QuartosDAO.php";
       $acoes = new Cliente_QuartosDAO();
 
-      echo "vamos exibir algo ou nao?"
+      echo "vamos exibir algo ou nao? 2222"
       $acoes->visualizar();
   ?>
 </body>
