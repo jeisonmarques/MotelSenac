@@ -23,7 +23,7 @@
 <body>
   <?php
       echo "vamos exibir algo ou nao?";
-      include "dao/Cliente_QuartosDAO.php";
+//      include "dao/Cliente_QuartosDAO.php";
 
       echo "vamos exibir algo ou nao? 2222";
       $acoes->visualizar();
