@@ -22,12 +22,10 @@
 </head>
 <body>
   <?php
-    include "dao/Cliente_Quartos.php";
-    $acoes = new Cliente_QuartosDAO();
 
 echo "eita porra";
-    $acoes->visualizar();
   ?>
 
+ahhaahha
 </body>
 </html>
