@@ -29,8 +29,8 @@
 
 </head>
 <?php
-  include "dao/Cliente_Quartos.php";
-  $acoes = new Cliente_QuartosDAO();
+  include "dao/ClienteQuartos.php";
+  $acoes = new ClienteQuartosDAO();
 ?>
 <body>
 
@@ -135,8 +135,7 @@
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
                             <?php
-                                include "dao/Cliente_Quartos.php";
-                                $acoes = new Cliente_QuartosDAO();
+                                $acoes = new ClienteQuartosDAO();
                                 $acoes->visualizar();
                             ?>
                             </div>
