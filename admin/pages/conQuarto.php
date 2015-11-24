@@ -23,10 +23,10 @@
 <body>
   EITA
   <?php
-      echo "vamos exibir algo ou nao?"
+      echo "vamos exibir algo ou nao?";
       include "dao/Cliente_QuartosDAO.php";
 
-      echo "vamos exibir algo ou nao? 2222"
+      echo "vamos exibir algo ou nao? 2222";
       $acoes->visualizar();
   ?>
 </body>
