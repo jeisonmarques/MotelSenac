@@ -34,23 +34,23 @@ class ClienteQuartosDAO extends BancoPDO {
             }
 
             if($stm->execute()) {
-                $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
-                         ."<td>ID</td>"
-                         ."<td>CLIENTE_ID</td>"
-                         ."<td>DESCRICAO</td>"
-                         ."<td>VALOR_HORA</td>"
-                         ."</tr>";
+//                $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
+  //                       ."<td>ID</td>"
+    //                     ."<td>CLIENTE_ID</td>"
+      //                   ."<td>DESCRICAO</td>"
+        //                 ."<td>VALOR_HORA</td>"
+          //               ."</tr>";
 
                          echo "<br> aqui 1111";
 
                 while($dados = $stm->fetch(PDO::FETCH_OBJ)) {
 echo "<br> aqui 222222";                    
-                   $tabela .= "<tr>"
-                             ."<td>".$dados->IdClienteQuartos."</td>"
-                             ."<td>".$dados->IdCliente."</td>"
-                             ."<td>".$dados->descricao."</td>"
-                             ."<td>".$dados->valor_hora."</td>"
-                             ."</tr>"; 
+//                   $tabela .= "<tr>"
+  //                           ."<td>".$dados->IdClienteQuartos."</td>"
+    //                         ."<td>".$dados->IdCliente."</td>"
+      //                       ."<td>".$dados->descricao."</td>"
+        //                     ."<td>".$dados->valor_hora."</td>"
+          //                   ."</tr>"; 
                 }
                 $tabela .= "</table>";
                 echo $tabela;
