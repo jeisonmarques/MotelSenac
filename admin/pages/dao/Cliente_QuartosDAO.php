@@ -26,6 +26,7 @@ class Cliente_QuartosDAO extends BancoPDO {
     }
 
     public function visualizar($id = "") {
+echo "funcionou isso aqui?";
         try { 
             if($id == "") {
                 $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos");
@@ -50,7 +51,6 @@ class Cliente_QuartosDAO extends BancoPDO {
                              ."</tr>"; 
                 }
                 $tabela .= "</table>";
-                echo "funcionou isso aqui?";
                 echo $tabela;
             }
         } catch(PDOException $e) {

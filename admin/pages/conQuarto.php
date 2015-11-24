@@ -25,6 +25,7 @@
     include "dao/Cliente_Quartos.php";
     $acoes = new Cliente_QuartosDAO();
 
+echo "eita porra";
     $acoes->visualizar();
   ?>
 
