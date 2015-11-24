@@ -29,9 +29,9 @@ class Cliente_QuartosDAO extends BancoPDO {
     public function visualizar($id = "") {
         try { 
             if($id == "") {
-                $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos");
+                $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos");
             } else {
-                $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos WHERE id = ?");
+                $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE id = ?");
                 $stm->bindParam(1, $id, PDO::PARAM_INT);
             }
 
