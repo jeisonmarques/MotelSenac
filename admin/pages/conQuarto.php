@@ -21,7 +21,6 @@
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  EITA
   <?php
       echo "vamos exibir algo ou nao?";
       include "dao/Cliente_QuartosDAO.php";
