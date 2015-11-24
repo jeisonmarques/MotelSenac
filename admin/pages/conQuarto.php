@@ -25,7 +25,7 @@
       echo "vamos exibir algo ou nao?";
       include "dao/Cliente_QuartosDAO.php";
 
-      echo "<br>";
+      echo "<br> construiu?";
       $acoes = new Cliente_QuartosDAO();
       echo "aham 2222";
       $acoes->visualizar();
