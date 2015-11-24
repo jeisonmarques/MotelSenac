@@ -7,7 +7,7 @@ class ClienteQuartosDAO extends BancoPDO {
         $this->conexao = BancoPDO::conexao();
     }
 
-    public function inserir($clientequartos) {
+/*    public function inserir($clientequartos) {
         try { 
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
@@ -23,14 +23,14 @@ class ClienteQuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-  
-    public function visualizar($id = "") {
+*/  
+    public function visualizar($idclientequartos = "") {
         try { 
-            if($id == "") {
+            if($idclientequartos == "") {
                 $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos");
             } else {
                 $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE IdClienteQuartos = ?");
-                $stm->bindParam(1, $IdClienteQuartos, PDO::PARAM_INT);
+                $stm->bindParam(1, $idclientequartos, PDO::PARAM_INT);
             }
 
             if($stm->execute()) {
