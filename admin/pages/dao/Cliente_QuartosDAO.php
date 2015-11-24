@@ -1,5 +1,5 @@
 <?php
-include "dao/BancoPDO.php";
+include "BancoPDO.php";
 
 class Cliente_QuartosDAO extends BancoPDO {
 
