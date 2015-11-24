@@ -4,10 +4,9 @@ include "BancoPDO.php";
 class Cliente_QuartosDAO extends BancoPDO {
 
     public function __construct() {
-        echo "funcionou isso aqui?";
         $this->conexao = BancoPDO::conexao();
     }
-    /*
+
 
     public function inserir($cliente_quartos) {
         try { 
@@ -26,8 +25,7 @@ class Cliente_QuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-*/
-    /*
+    
     public function visualizar($id = "") {
         try { 
             if($id == "") {
@@ -59,7 +57,6 @@ class Cliente_QuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
- */   
   /*  
     public function buscarDados($id) {
         try {
