@@ -11,10 +11,9 @@ class ClienteQuartosDAO extends BancoPDO {
         try { 
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
-            $stm->bindValue(1, $clientequartos->IdCliente);
-            $stm->bindValue(2, $clientequartos->descricao);
-            $stm->bindValue(3, $clientequartos->valor_hora);
-
+//            $stm->bindValue(1, $clientequartos->IdCliente);
+//            $stm->bindValue(2, $clientequartos->descricao);
+  //          $stm->bindValue(3, $clientequartos->valor_hora);
            
             if($stm->execute()) {
                 echo "Dados inseridos com sucesso! <br/>";
@@ -24,7 +23,7 @@ class ClienteQuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-  */  
+  
     public function visualizar($id = "") {
         try { 
             if($id == "") {
