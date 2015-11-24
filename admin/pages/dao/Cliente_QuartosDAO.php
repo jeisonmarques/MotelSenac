@@ -34,8 +34,7 @@ class Cliente_QuartosDAO extends BancoPDO {
                 $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos WHERE id = ?");
                 $stm->bindParam(1, $id, PDO::PARAM_INT);
             }
-echo "<br>  passou conexao";
-/*
+
             if($stm->execute()) {
                 $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
                          ."<td>ID</td>"
@@ -53,8 +52,10 @@ echo "<br>  passou conexao";
                 }
                 $tabela .= "</table>";
                 echo $tabela;
+            } else {
+                echo "deu alguma merda";
             }
-*/        } catch(PDOException $e) {
+        } catch(PDOException $e) {
                 echo "Erro: ".$e->getMessage();
         }
     }
