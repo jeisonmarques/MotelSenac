@@ -6,6 +6,7 @@ class Cliente_QuartosDAO extends BancoPDO {
     public function __construct() {
         $this->conexao = BancoPDO::conexao();
     }
+    /*
 
     public function inserir($cliente_quartos) {
         try { 
@@ -24,7 +25,7 @@ class Cliente_QuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-
+*/
     public function visualizar($id = "") {
 echo "funcionou isso aqui?";
         try { 
@@ -57,7 +58,7 @@ echo "funcionou isso aqui?";
                 echo "Erro: ".$e->getMessage();
         }
     }
-    
+  /*  
     public function buscarDados($id) {
         try {
             $stm = $this->conexao->prepare("SELECT * FROM cliente_quartos WHERE id = ?");
@@ -95,6 +96,6 @@ echo "funcionou isso aqui?";
             echo "Erro: ".$e->getMessage();
         }
     }
-
+*/
 }
 ?>
