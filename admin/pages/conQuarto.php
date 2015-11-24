@@ -26,7 +26,6 @@
 
       echo "<br> construiu? <br> ";
       $acoes = new ClienteQuartosDAO();
-      echo "aham 2222 <br>";
       $acoes->visualizar();
   ?>
 </body>

@@ -7,7 +7,7 @@ class ClienteQuartosDAO extends BancoPDO {
         $this->conexao = BancoPDO::conexao();
     }
 
-/*    public function inserir($clientequartos) {
+    public function inserir($clientequartos) {
         try { 
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
@@ -23,7 +23,7 @@ class ClienteQuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-*/  
+  
     public function visualizar($idclientequartos = "") {
         try { 
             if($idclientequartos == "") {
@@ -34,8 +34,8 @@ class ClienteQuartosDAO extends BancoPDO {
             }
 
             if($stm->execute()) {
-                $tabela = "<table><tr>"
-                //"<table class=""table table-striped table-bordered table-hover"" id=""dataTables-example""><tr>"
+                $tabela = //"<table><tr>"
+                "<table class=""table table-striped table-bordered table-hover"" id=""dataTables-example""><tr>"
                          ."<td>ID</td>"
                          ."<td>CLIENTE_ID</td>"
                          ."<td>DESCRICAO</td>"
