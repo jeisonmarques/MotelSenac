@@ -27,6 +27,7 @@ class Cliente_QuartosDAO extends BancoPDO {
         }
     }
 */
+    /*
     public function visualizar($id = "") {
         try { 
             if($id == "") {
@@ -58,6 +59,7 @@ class Cliente_QuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
+ */   
   /*  
     public function buscarDados($id) {
         try {
