@@ -25,7 +25,6 @@
   <?php
       echo "vamos exibir algo ou nao?"
       include "dao/Cliente_QuartosDAO.php";
-      $acoes = new Cliente_QuartosDAO();
 
       echo "vamos exibir algo ou nao? 2222"
       $acoes->visualizar();
