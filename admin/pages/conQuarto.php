@@ -22,12 +22,11 @@
 </head>
 <body>
   <?php
-      echo "vamos exibir algo ou nao?";
       include "dao/Cliente_QuartosDAO.php";
 
-      echo "<br> construiu?";
+      echo "<br> construiu? <br>";
       $acoes = new Cliente_QuartosDAO();
-      echo "aham 2222";
+      echo "aham 2222 <br>";
       $acoes->visualizar();
   ?>
 </body>
