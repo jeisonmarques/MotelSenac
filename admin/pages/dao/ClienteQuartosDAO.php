@@ -7,26 +7,18 @@ class ClienteQuartosDAO extends BancoPDO {
         $this->conexao = BancoPDO::conexao();
     }
 
-    public function inserir() {
-      //$clientequartos
+    public function inserir($clientequartos) {
         try { 
-
-            $stm = $this->conexao->prepare(" INSERT INTO Cliente ( nome, cnpj, end_logradouro, latitude, longitude, email, senha) "
-                                          ." VALUES ('teste1', 12345678, 'rua xxxxxxx', 33, 44, 'fghjk@gmail.com' , 'pass' ) ");
-
-
-/*
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
 
             $stm->bindValue(1, $clientequartos->IdCliente);
             $stm->bindValue(2, $clientequartos->descricao);
             $stm->bindValue(3, $clientequartos->valor_hora);
-  */
 
             if($stm->execute()) {
                 echo "Dados inseridos com sucesso! <br/>";
-//                header("Location: index.html");
+                header("Location: index.html");
             }
         } catch(PDOException $e) {
                 echo "Erro: ".$e->getMessage();
@@ -52,12 +44,12 @@ class ClienteQuartosDAO extends BancoPDO {
                          ."</tr>";
 
                 while($dados = $stm->fetch(PDO::FETCH_OBJ)) {
-//                   $tabela .= "<tr>"
-  //                           ."<td>".$dados->IdClienteQuartos."</td>"
-    //                         ."<td>".$dados->IdCliente."</td>"
-      //                       ."<td>".$dados->descricao."</td>"
-        //                     ."<td>".$dados->valor_hora."</td>"
-          //                   ."</tr>"; 
+                   $tabela .= "<tr>"
+                             ."<td>".$dados->IdClienteQuartos."</td>"
+                             ."<td>".$dados->IdCliente."</td>"
+                             ."<td>".$dados->descricao."</td>"
+                             ."<td>".$dados->valor_hora."</td>"
+                             ."</tr>"; 
                 }
                 $tabela .= "</table>";
                 echo $tabela;
@@ -66,6 +58,7 @@ class ClienteQuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
+
   /*  
     public function buscarDados($id) {
         try {

@@ -27,7 +27,6 @@
       echo "<br> construiu? <br> ";
       $acoes = new ClienteQuartosDAO();
       $acoes->visualizar();
-      $acoes->inserir();
   ?>
 </body>
 </html>

@@ -22,8 +22,8 @@
     <![endif]-->
   </head>
     <?php
-      include "classes/Cliente_Quartos.php";
-      include "dao/Cliente_QuartosDAO.php";
+      include "classes/ClienteQuartos.php";
+      include "dao/ClienteQuartosDAO.php";
     ?>
     
   <body>
@@ -128,7 +128,7 @@
                     <form role="form" action="cadastrarcliente_quartos.php" method="post">
                       <div class="form-group">                      
                         <label>Cliente</label>
-                        <input id="cliente_id" class="form-control" placeholder="Cliente" required="required">
+                        <input id="idcliente" class="form-control" placeholder="Cliente" required="required">
                         <label>Descrição</label>
                         <input id="descricao" class="form-control" placeholder="Descrição" required="required">
                         <label>Valor Hora</label>
