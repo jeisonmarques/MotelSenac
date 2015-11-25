@@ -8,7 +8,7 @@
         $descricao          = $_POST["descricao"];
         $valor_hora         = $_POST["valor_hora"];
         
-        $clientequartos = new ClienteQuartos( 1 //""
+        $clientequartos = new ClienteQuartos( ""
                                             , 2  //$idcliente
                                             , $descricao
                                             , $valor_hora  );
