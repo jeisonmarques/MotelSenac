@@ -28,12 +28,11 @@
     <![endif]-->
 
 </head>
-<?php
-  include "dao/ClienteQuartos.php";
-  $acoes = new ClienteQuartosDAO();
-?>
 <body>
-
+  <?php
+    include "dao/ClienteQuartos.php";
+    $acoes = new ClienteQuartosDAO();
+  ?>
     <div id="wrapper">
 
          <!-- Navigation -->
