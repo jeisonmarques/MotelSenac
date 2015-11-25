@@ -3,13 +3,13 @@
         include "classes/ClienteQuartos.php";
         include "dao/ClienteQuartosDAO.php";
 
-        //$idclientequartos   = $_POST["idclientequartos"];
+        $idclientequartos   = $_POST["idclientequartos"];
         $idcliente          = $_POST["idcliente"];
         $descricao          = $_POST["descricao"];
         $valor_hora         = $_POST["valor_hora"];
         
-        $clientequartos = new ClienteQuartos( ""
-                                            , 2//$idcliente
+        $clientequartos = new ClienteQuartos( 1 //""
+                                            , 2  //$idcliente
                                             , $descricao
                                             , $valor_hora  );
         echo $clientequartos;

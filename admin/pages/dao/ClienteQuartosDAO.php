@@ -9,7 +9,7 @@ class ClienteQuartosDAO extends BancoPDO {
 
     public function inserir($clientequartos) {
         try { 
-            $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
+            $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (idcliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
 
             $stm->bindValue(1, $clientequartos->idcliente);

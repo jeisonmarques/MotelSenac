@@ -2,17 +2,17 @@
 
 class ClienteQuartos {
 
-    protected $IdClienteQuartos;
-    protected $IdCliente;
+    protected $idclientequartos;
+    protected $idcliente;
     protected $descricao;
     protected $valor_hora;
 
-    function __construct( $IdClienteQuartos = ""
-                        , $IdCliente        = ""
+    function __construct( $idclientequartos = ""
+                        , $idcliente        = ""
                         , $descricao        = ""
                         , $valor_hora       = "" ) {
-        $this->IdClienteQuartos     = $IdClienteQuartos;
-        $this->IdCliente            = $IdCliente;
+        $this->idclientequartos     = $idclientequartos;
+        $this->idcliente            = $idcliente;
         $this->descricao            = $descricao;
         $this->valor_hora           = $valor_hora;
     }
@@ -26,7 +26,7 @@ class ClienteQuartos {
     }
 
     function __toString() {
-        return "O quarto de id [".$this->IdClienteQuartos."] tem a descrição ".$this->descricao;
+        return "O quarto de id [".$this->idclientequartos."] tem a descrição ".$this->descricao;
     }
 }
 ?>
