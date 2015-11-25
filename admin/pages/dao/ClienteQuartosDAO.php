@@ -10,16 +10,23 @@ class ClienteQuartosDAO extends BancoPDO {
     public function inserir() {
       //$clientequartos
         try { 
+
+            $stm = $this->conexao->prepare(" INSERT INTO Cliente ( nome, cnpj, end_logradouro, latitude, longitude, email, senha) "
+                                          ." VALUES ('teste1', 12345678, 'rua xxxxxxx', 33, 44, 'fghjk@gmail.com' , 'pass' ) ");
+
+
+/*
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
 
             $stm->bindValue(1, $clientequartos->IdCliente);
             $stm->bindValue(2, $clientequartos->descricao);
             $stm->bindValue(3, $clientequartos->valor_hora);
-           
+  */
+
             if($stm->execute()) {
                 echo "Dados inseridos com sucesso! <br/>";
-                header("Location: index.html");
+//                header("Location: index.html");
             }
         } catch(PDOException $e) {
                 echo "Erro: ".$e->getMessage();
