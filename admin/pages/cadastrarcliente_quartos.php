@@ -9,7 +9,7 @@
         $valor_hora         = $_POST["valor_hora"];
         
         $clientequartos = new ClienteQuartos( ""
-                                            , $idcliente
+                                            , 2//$idcliente
                                             , $descricao
                                             , $valor_hora  );
         echo $clientequartos;
