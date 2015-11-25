@@ -3,7 +3,7 @@
         include "classes/ClienteQuartos.php";
         include "dao/ClienteQuartosDAO.php";
 
-        $idclientequartos   = $_POST["idclientequartos"];
+        //$idclientequartos   = $_POST["idclientequartos"];
         $idcliente          = $_POST["idcliente"];
         $descricao          = $_POST["descricao"];
         $valor_hora         = $_POST["valor_hora"];
