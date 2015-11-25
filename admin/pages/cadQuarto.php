@@ -126,14 +126,16 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-lg-6">
+                    
                     <form name="form1" action="cadastrarcliente_quartos.php" method="post">
+                    <fieldset>
                       <div class="form-group">                      
                         <label>Cliente</label>
-                        <input id="idcliente" class="form-control" placeholder="Cliente" required="required">
+                        <input              id="idcliente"  placeholder="Cliente"     required="required">
                         <label>Descrição</label>
-                        <input type="text" id="descricao" class="form-control" placeholder="Descrição" required="required">
+                        <input type="text"  id="descricao"  placeholder="Descrição"   required="required">
                         <label>Valor Hora</label>
-                        <input type="text" id="valor_hora" class="form-control" placeholder="Valor Hora" required="required">
+                        <input type="text"  id="valor_hora" placeholder="Valor Hora"  required="required">
                       </div>
                       <div class="form-group">
                         <label>Fotos</label>
@@ -141,7 +143,9 @@
                       </div>
                         <input type="submit"    name="acao"     value="Salvar" class="btn btn-primary"/>
                         <button type="submit"   class="btn btn-danger">Cancelar</button>     
+                    </fieldset>
                     </form>
+
                   </div>
                   <!-- /.col-lg-6 -->                
                 </div>
