@@ -11,14 +11,14 @@ class ClienteQuartosDAO extends BancoPDO {
       //$clientequartos
         try { 
 
-            $stm = $this->conexao->prepare(" INSERT INTO Cliente ( nome, cnpj, end_logradouro, latitude, longitude, email, senha) "
-                                          ." VALUES ('teste1', 12345678, 'rua xxxxxxx', 33, 44, 'fghjk@gmail.com' , 'pass' ) ");
+            $stm = $this->conexao->prepare(" INSERT INTO Cliente ( idcliente, nome, cnpj, end_logradouro, latitude, longitude, email, senha) "
+                                          ." VALUES (909, 'teste1', 12345678, 'rua xxxxxxx', 33, 44, 'fghjk@gmail.com' , 'pass' ) ");
 
 
 /*
             $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (IdCliente, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
-
+//909 idCliente
             $stm->bindValue(1, $clientequartos->IdCliente);
             $stm->bindValue(2, $clientequartos->descricao);
             $stm->bindValue(3, $clientequartos->valor_hora);
