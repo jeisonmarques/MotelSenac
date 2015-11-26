@@ -1,5 +1,5 @@
 <?
-	require "classes/Cliente.php";
+	require "classCliente.php";
 
 	$id = $_POST["id"];
 	$novoCliente = $_POST["novoCliente"];	

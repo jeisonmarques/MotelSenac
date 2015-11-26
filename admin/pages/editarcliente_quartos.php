@@ -11,10 +11,10 @@
             $descricao        = $_POST["descricao"];
             $valor_hora       = $_POST["valor_hora"];
 
-            $cliente_quarto = new Cliente_Quartos( $id
-                                                 , $cliente_id
-                                                 , $descricao
-                                                 , $valor_hora  );
+            $cliente_quarto = new Paciente( $id
+                                    , $cliente_id
+                                    , $descricao
+                                    , $valor_hora  );
 
             if($acoes->alterar($cliente_quarto)) 
                 header("refresh:3; url=index.html");

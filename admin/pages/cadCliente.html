@@ -115,64 +115,64 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="row">
-				<form role="form" method="post" action="insereCliente.php">
+				<form role="form" method="post" action="insereUsuario.php">
 					<div class="col-lg-6">     
 						<div class="form-group">                      
 						  <label>Nome</label>
-						  <input class="form-control" placeholder="Nome" required="required">
+						  <input class="form-control" placeholder="Nome" required="required"  name="nome">
 						  <label>CNPJ</label>
-						  <input class="form-control" placeholder="CNPJ" required="required">
+						  <input class="form-control" placeholder="CNPJ" required="required"  name="cnpj">
 						  <label>Latitude</label>
-						  <input id="latidude" class="form-control" placeholder="Latitude" required="required">
+						  <input id="latidude" class="form-control" placeholder="Latitude" required="required"  name="latitude">
 						  <label>Longitude</label>
-						  <input id="longitude" class="form-control" placeholder="Longitude" required="required">
+						  <input id="longitude" class="form-control" placeholder="Longitude" required="required" name="longitude">
 						  <label>E-mail</label>
-						  <input type="email"id="longitude" class="form-control" placeholder="E-mail" required="required">
+						  <input id="email" class="form-control" placeholder="E-mail" required="required" name="email" type="email">
 						  <label>Senha</label>
-						  <input type="password"id="senha" class="form-control" placeholder="Senha" required="required">
+						  <input id="senha" class="form-control" placeholder="Senha" required="required" name="senha" type="password">
 						</div>
 					</div>
 					<div class="col-lg-6">                  
 						<div class="form-group">                      
 							<label>CEP</label>                    
-							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/>                       
+							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/ name="cep">                       
 							<label>Rua</label>
-							<input id="rua" class="form-control" placeholder="Logradouro" disabled>
+							<input id="rua" class="form-control" placeholder="Logradouro" name="end_logradouro">
 							<label>Número</label>
-							<input id="numero" class="form-control" placeholder="Número">
+							<input id="numero" class="form-control" placeholder="Número" name="end_numero">
 							<label>Bairro</label>
-							<input id="bairro"class="form-control" placeholder="Bairro" disabled>
+							<input id="bairro"class="form-control" placeholder="Bairro" name="end_bairro">
 							<label>Cidade</label>
-							<input id="cidade" class="form-control" placeholder="Cidade" disabled>
+							<input id="cidade" class="form-control" placeholder="Cidade" name="end_cidade">
 							<label>Estado</label>
-							<input id="estado" class="form-control" placeholder="Estado" disabled>
+							<input id="estado" class="form-control" placeholder="Estado">
 						</div>                  
 					</div>	
                       <div class="col-lg-6">
                         <div class="form-group">
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="banheira" >Banheira
+                            <input type="checkbox" value="banheira" name="banheira" >Banheira
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="arCondicionado">Ar Condicionado
+                            <input type="checkbox" value="arCondicionado" name="arCondicionado">Ar Condicionado
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="lareira">Lareira
+                            <input type="checkbox" value="lareira" name="lareira">Lareira
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="sauna">Sauna
+                            <input type="checkbox" value="sauna" name="sauna">Sauna
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="cadeiraErotica">Cadeira Erótica
+                            <input type="checkbox" value="cadeiraErotica" name="cadeiraErotica">Cadeira Erótica
                             </label>
                           </div>
                         </div>
@@ -181,27 +181,27 @@
                         <div class="form-group">
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="frigobar">Frigobar
+                            <input type="checkbox" value="frigobar" name="frigobar">Frigobar
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="luzNegra">Luz Negra
+                            <input type="checkbox" value="luzNegra" name="luzNegra">Luz Negra
                             </label>                        
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="canaisEroticos">Canais Eróticos
+                            <input type="checkbox" value="canaisEroticos" name="canaisEroticos">Canais Eróticos
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="quartosTematicos">Quarto Temático
+                            <input type="checkbox" value="quartosTematicos" name="quartosTematicos">Quarto Temático
                             </label>
                           </div>
                           <div class="checkbox">
                             <label>
-                            <input type="checkbox" value="poleDance">Pole Dance
+                            <input type="checkbox" value="poleDance" name="poleDance">Pole Dance
                             </label>
                           </div>
                         </div>

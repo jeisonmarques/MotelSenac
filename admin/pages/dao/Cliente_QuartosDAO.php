@@ -1,5 +1,5 @@
 <?php
-include "BancoPDO.php";
+include "dao/BancoPDO.php";
 
 class ClienteQuartosDAO extends BancoPDO {
 
@@ -7,15 +7,15 @@ class ClienteQuartosDAO extends BancoPDO {
         $this->conexao = BancoPDO::conexao();
     }
 
-    public function inserir($clientequartos) {
+    public function inserir($ClienteQuartos) {
         try { 
-            $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (idcliente, descricao, valor_hora) "
+            $stm = $this->conexao->prepare(" INSERT INTO ClienteQuartos (cliente_id, descricao, valor_hora) "
                                           ." VALUES (?, ?, ?) ");
+            $stm->bindValue(1, $ClienteQuartos->cliente_id);
+            $stm->bindValue(2, $ClienteQuartos->descricao);
+            $stm->bindValue(3, $ClienteQuartos->valor_hora);
 
-            $stm->bindValue(1, $clientequartos->idcliente);
-            $stm->bindValue(2, $clientequartos->descricao);
-            $stm->bindValue(3, $clientequartos->valor_hora);
-
+           
             if($stm->execute()) {
                 echo "Dados inseridos com sucesso! <br/>";
                 header("Location: index.html");
@@ -24,42 +24,39 @@ class ClienteQuartosDAO extends BancoPDO {
                 echo "Erro: ".$e->getMessage();
         }
     }
-  
-    public function visualizar($idclientequartos = "") {
+
+    public function visualizar($id = "") {
         try { 
-            if($idclientequartos == "") {
+            if($id == "") {
                 $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos");
             } else {
-                $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE IdClienteQuartos = ?");
-                $stm->bindParam(1, $idclientequartos, PDO::PARAM_INT);
+                $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE id = ?");
+                $stm->bindParam(1, $id, PDO::PARAM_INT);
             }
 
             if($stm->execute()) {
-                $tabela = "<table><tr>"
-                //"<table class="table table-striped table-bordered table-hover id="dataTables-example><tr>"
+                $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
                          ."<td>ID</td>"
                          ."<td>CLIENTE_ID</td>"
                          ."<td>DESCRICAO</td>"
                          ."<td>VALOR_HORA</td>"
                          ."</tr>";
-
                 while($dados = $stm->fetch(PDO::FETCH_OBJ)) {
                    $tabela .= "<tr>"
-                             ."<td>".$dados->IdClienteQuartos."</td>"
-                             ."<td>".$dados->IdCliente."</td>"
+                             ."<td>".$dados->id."</td>"
+                             ."<td>".$dados->cliente_id."</td>"
                              ."<td>".$dados->descricao."</td>"
                              ."<td>".$dados->valor_hora."</td>"
                              ."</tr>"; 
                 }
                 $tabela .= "</table>";
                 echo $tabela;
-            } 
+            }
         } catch(PDOException $e) {
                 echo "Erro: ".$e->getMessage();
         }
     }
-
-  /*  
+    
     public function buscarDados($id) {
         try {
             $stm = $this->conexao->prepare("SELECT * FROM ClienteQuartos WHERE id = ?");
@@ -76,14 +73,14 @@ class ClienteQuartosDAO extends BancoPDO {
         }
     }
     
-    public function alterar($cliente_quartos) {
+    public function alterar($ClienteQuartos) {
         try {
-            $stm = $this->conexao->prepare("UPDATE cliente_quartos SET cliente_id = ? "
+            $stm = $this->conexao->prepare("UPDATE ClienteQuartos SET cliente_id = ? "
                                           .", descricao = ?, valor_hora = ? "
                                           ." WHERE id = ? ");
-            $stm->bindValue(1, $cliente_quartos->cliente_id);
-            $stm->bindValue(2, $cliente_quartos->descricao);
-            $stm->bindValue(3, $cliente_quartos->valor_hora);
+            $stm->bindValue(1, $ClienteQuartos->cliente_id);
+            $stm->bindValue(2, $ClienteQuartos->descricao);
+            $stm->bindValue(3, $ClienteQuartos->valor_hora);
 
             $query = $stm->execute();
 
@@ -97,6 +94,6 @@ class ClienteQuartosDAO extends BancoPDO {
             echo "Erro: ".$e->getMessage();
         }
     }
-*/
+
 }
 ?>
