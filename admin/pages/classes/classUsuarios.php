@@ -1,5 +1,5 @@
 <?
-require_once("classes/classConexaoMysql.php");
+require_once("dao/BancoPDO.php");
 
 Class usuarios{
 
@@ -149,7 +149,7 @@ Class usuarios{
 	//SELECT
     function seleciona(){
 		$mySQL = new MySQL;
-		$rs = $mySQL->executeQuery("SELECT * FROM usuario;");
+		$rs = $mySQL->executeQuery("SELECT * FROM cliente;");
 		$mySQL->disconnect;
 		return $rs;
     }
@@ -157,7 +157,7 @@ Class usuarios{
 	//SELECT ID
     function selecionaid(){
         $mySQL = new MySQL;
-		$rs = $mySQL->executeQuery("SELECT * FROM usuario where id='$this->id';");
+		$rs = $mySQL->executeQuery("SELECT * FROM cliente where idcliente='$this->id';");
 		$mySQL->disconnect;
 		return $rs;
     }
@@ -165,7 +165,7 @@ Class usuarios{
 		//DELETE
 		function apaga(){
   		$mySQL = new MySQL;
-		$rs = $mySQL->executeQuery("delete from usuario where id = '$this->id'");
+		$rs = $mySQL->executeQuery("delete from cliente where idcliente = '$this->id'");
 		$mySQL->disconnect;
 		return $rs;
 		}
@@ -173,7 +173,7 @@ Class usuarios{
 	// INSERT
 	function inseri(){
         $mySQL = new MySQL;
-		$sql = "INSERT INTO usuario (id, nome, cnpj, end_logradouro, end_numero, end_bairro, end_cidade, end_cep, latitude, longitude, email, senha, ativo) 
+		$sql = "INSERT INTO cliente (idcliente, nome, cnpj, end_logradouro, end_numero, end_bairro, end_cidade, end_cep, latitude, longitude, email, senha, ativo) 
 				VALUES (NULL, '$this->nome', '$this->cnpj', '$this->end_logradouro', '$this->end_numero', '$this->end_bairro', '$this->end_cidade', '$this->end_cep', '$this->latitude', '$this->longitude', '$this->email', '$this->senha', 'S')";
 		//$sql2 = "INSERT INTO cliente_quartos (id, caracteristica_id, cliente_id) VALUES (NULL, '$this->setbanheira', '$this->cliente_id')";	
 		$rs = $mySQL->executeQuery($sql);
@@ -184,7 +184,7 @@ Class usuarios{
 	//UPDATE
     function atualiza(){
         $mySQL = new MySQL;
-		$sql = "update usuario,senha set senha = '$this->novasenha', senha = '$this->novasenha' where id = '$this->id'";
+		$sql = "update cliente, senha set senha = '$this->novasenha', senha = '$this->novasenha' where idcliente = '$this->id'";
 		$rs = $mySQL->executeQuery($sql);		
 		$mySQL->disconnect;
 		return $rs;
