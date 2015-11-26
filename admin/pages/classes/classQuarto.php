@@ -35,7 +35,7 @@ Class quartos{
     //METODOS DE BANCO
     //SELECT
     function seleciona(){
-        $mySQL = new MySQL;
+        $mySQL = new BancoPDO;
         $rs = $mySQL->executeQuery("SELECT * FROM clientequartos;");
         $mySQL->disconnect;
         return $rs;
@@ -43,7 +43,7 @@ Class quartos{
     
     //SELECT ID
     function selecionaid(){
-        $mySQL = new MySQL;
+        $mySQL = new BancoPDO;
         $rs = $mySQL->executeQuery("SELECT * FROM clientequartos where idclientequartos='$this->id';");
         $mySQL->disconnect;
         return $rs;
@@ -51,7 +51,7 @@ Class quartos{
     
         //DELETE
         function apaga(){
-        $mySQL = new MySQL;
+        $mySQL = new BancoPDO;
         $rs = $mySQL->executeQuery("delete from clientequartos where idclientequartos = '$this->id'");
         $mySQL->disconnect;
         return $rs;
@@ -59,7 +59,7 @@ Class quartos{
     
     // INSERT
     function inseri(){
-        $mySQL = new MySQL;
+        $mySQL = new BancoPDO;
         $sql = "INSERT INTO clientequartos (idclientequartos, idcliente, descricao, valor_hora ) 
                 VALUES (NULL, '$this->cliente_id', '$this->descricao', '$this->valor_hora')";
         $rs = $mySQL->executeQuery($sql);
@@ -69,7 +69,7 @@ Class quartos{
     
     //UPDATE
     function atualiza(){
-        $mySQL = new MySQL;
+        $mySQL = new BancoPDO;
         $sql = "update clientequartos,senha set senha = '$this->novasenha', senha = '$this->novasenha' where idclientequartos = '$this->id'";
         $rs = $mySQL->executeQuery($sql);       
         $mySQL->disconnect;
@@ -78,7 +78,7 @@ Class quartos{
     
     // CONTAR
     function contar(){
-        $mySQL = new MySQL;
+        $mySQL = new BancoPDO;
         $sql = "SELECT * FROM clientequartos";
         $rs = $mySQL->contalinha($sql);
         //echo $sql;
