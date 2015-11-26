@@ -60,10 +60,11 @@ Class quartos{
     // INSERT
     function inseri(){
         $mySQL = new BancoPDO;
-        $sql = "INSERT INTO clientequartos (idclientequartos, idcliente, descricao, valor_hora ) 
-                VALUES (NULL, '$this->cliente_id', '$this->descricao', '$this->valor_hora')";
-        $rs = $mySQL->executeQuery($sql);
-        $mySQL->disconnect;
+        $sql = "INSERT INTO clientequartos (idclientequartos, idcliente, descricao, valor_hora ) VALUES (NULL, '$this->cliente_id', '$this->descricao', '$this->valor_hora')";
+        $rs = $mySQL->prepare($sql);
+        $rs = $mySQL->execute();
+        $this->disconnect(); 
+        return $this->result;
         return $rs;     
     }
     
