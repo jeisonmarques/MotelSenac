@@ -22,7 +22,7 @@
 </head>
 <body>
   <?php
-      include "dao/Cliente_QuartosDAO.php";
+      include "dao/ClienteQuartosDAO.php";
 
       echo "<br> construiu? <br> ";
       $acoes = new ClienteQuartosDAO();
