@@ -2,7 +2,7 @@
 require "classes/classQuarto.php";
 
 $descricao = $_POST["descricao"];
-$cliente_id = $_POST["cliente_id"];
+$cliente_id = $_POST["cliénte_id"];
 $valor_hora = $_POST["valor_hora"];
 
 $a = new quartos;
