@@ -1,35 +1,24 @@
 <?php
 
-require "classes/classUsuarios.php";
+require "classCliente.php";
 
  ini_set('default_charset','UTF-8'); 
 
  $email = $_POST["email"];
- $senha = $_POST["senha"]; 
+ $senha = $_POST["senha"];
+ 
+$email = $_POST["usuario"];
+$senha = $_POST["senha"];   
 
- if($email == "" and $senha == ""){
-  echo "O usuário e a senha não foram preenchidos";  
- } elseif ($email =="") {
-    echo "O usuário não foi preenchido";        
- } elseif ($senha == "") {
-   echo "A senha não foi preenchido";
- } elseif ($email and $senha != "") {
-   }
-   
-$a = new usuarios;
+$a = new usuario;
 $a->setemail($email);
 $a->setsenha($senha);
-
-$rs = $a->loga();
+$rs = $a->logar();
 
 $numero_linhas = mysql_num_rows($rs);
 
 if ($numero_linhas>0){
 	header("Location:index.html");
-} else {
-	echo "<script>";
-	echo " alert('Usuário não encontrado');      
-        window.location.href='login.html';
-      </script>";    		
 }
+ 
 ?>

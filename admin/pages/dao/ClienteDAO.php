@@ -9,8 +9,8 @@ class ClienteDAO extends BancoPDO {
 
     public function inserir($cliente) {
         try { 
-            $stm = $this->conexao->prepare(" INSERT INTO cliente (nome, cnpj, end_logradouro, end_numero, end_bairro, end_cidade, end_cep, latidade, longitude, email, senha, ativo, descricao) "
-                                          ." VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'S', ?) ");
+            $stm = $this->conexao->prepare(" INSERT INTO cliente (nome, cnpj, end_logradouro, end_numero, end_bairro, end_cidade, end_cep, latidade, longitude, email, senha, ativo, foto, descricao) "
+                                          ." VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'S', ?, ?) ");
             $stm->bindValue(1, $cliente->nome);
             $stm->bindValue(2, $cliente->cnpj);
             $stm->bindValue(3, $cliente->end_logradouro);
@@ -22,8 +22,9 @@ class ClienteDAO extends BancoPDO {
             $stm->bindValue(9, $cliente->longitude);
             $stm->bindValue(10, $cliente->email);
             $stm->bindValue(11, $cliente->senha);
-            $stm->bindValue(12, $cliente->ativo);            
-            $stm->bindValue(13, $cliente->descricao);
+            $stm->bindValue(12, $cliente->ativo);
+            $stm->bindValue(13, $cliente->foto);
+            $stm->bindValue(14, $cliente->descricao);
            
             if($stm->execute()) {
                 echo "Dados inseridos com sucesso! <br/>";
