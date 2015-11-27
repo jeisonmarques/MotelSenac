@@ -133,8 +133,6 @@
 
                             <?php
 							  include "dao/ClienteQuartosDAO.php";
-
-							  echo "<br> construiu? <br> ";
 							  $acoes = new ClienteQuartosDAO();
 							  $acoes->visualizar();
 						  ?>

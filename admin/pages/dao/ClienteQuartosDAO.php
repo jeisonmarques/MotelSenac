@@ -35,8 +35,8 @@ class ClienteQuartosDAO extends BancoPDO {
             }
 
             if($stm->execute()) {
-                $tabela = "<table><tr>"
-                //"<table class="table table-striped table-bordered table-hover id="dataTables-example><tr>"
+                $tabela =
+                "<table class="table table-striped table-bordered table-hover id="dataTables-example><tr>"
                          ."<td>ID</td>"
                          ."<td>CLIENTE_ID</td>"
                          ."<td>DESCRICAO</td>"
