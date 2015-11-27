@@ -217,6 +217,11 @@
 // locate you.
             function modalClick(id) {
                     console.log('teste ok ' + id);
+                    var urlModal = "http://api-motel.azurewebsites.net/motel.svc/" + id;
+
+                    $.getJSON(urlModal, function (dataModal) {
+                        console.log(dataModal);
+                    }
             }
 
             function initMap() {
