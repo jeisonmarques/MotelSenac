@@ -21,4 +21,5 @@
 
         $acoes = new ClienteQuartosDAO();
         $acoes->inserir($clientequartos);
+	}
 ?>
