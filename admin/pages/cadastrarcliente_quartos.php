@@ -1,5 +1,4 @@
 ﻿<?php
-var_dump($_POST);
 
     if(isset($_POST)){
         include "classes/ClienteQuartos.php";
