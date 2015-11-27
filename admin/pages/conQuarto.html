@@ -30,8 +30,8 @@
 </head>
 <body>
   <?php
-    include "dao/ClienteQuartos.php";
-    $acoes = new ClienteQuartosDAO();
+    include "dao/ClienteQuartosDAO.php";
+    
   ?>
     <div id="wrapper">
 
@@ -134,8 +134,9 @@
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
 
-                            <?php 
-                              $acoes->visualizar();  
+                            <?php
+								$acoes = new ClienteQuartosDAO();
+								$acoes->visualizar();  
                             ?>
 
                             </div>
