@@ -18,9 +18,9 @@
         $acoes = new ClienteQuartosDAO();
         $acoes->inserir($clientequartos);
 		
-		echo "<script>";
-			echo "alert('Cliente adicionado com sucesso!');
-			window.location.href='conQuarto.php';
+		echo "<script type='text/javascript'>
+			alert('Cliente adicionado com sucesso');	
+					document.location='cadQuarto.html';
 			</script>";
 	}
 ?>
