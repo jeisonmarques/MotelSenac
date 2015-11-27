@@ -157,7 +157,11 @@
                 <h4 class="modal-title" id="myModalLabel"></h4>
                 </div>
                 <div class="modal-body">
-                    <h3>Modal Body</h3>
+                    <h3 id="tituloModal"></h3>
+                    <p id="descricaoModal"></p>
+                    <p id="enderecoModal"></p>
+                    <p id="avaliacoes"></p>
+                    <p id="fotos"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -220,7 +224,7 @@
                     var urlModal = "http://api-motel.azurewebsites.net/motel.svc/" + id;
 
                     $.getJSON(urlModal, function (dataModal) {
-                        console.log(dataModal);
+                        document.getElementById('tituloModal').text = dataModal.NomeMotel;
                     });
             }
 
