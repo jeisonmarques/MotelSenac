@@ -224,7 +224,7 @@
                     var urlModal = "http://api-motel.azurewebsites.net/motel.svc/" + id;
 
                     $.getJSON(urlModal, function (dataModal) {
-                        document.getElementById('tituloModal').text = dataModal.NomeMotel;
+                        document.getElementById("tituloModal").value = dataModal.NomeMotel;
                     });
             }
 
