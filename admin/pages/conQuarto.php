@@ -29,10 +29,7 @@
 
 </head>
 <body>
-  <?php
-    include "dao/ClienteQuartosDAO.php";
-    
-  ?>
+
     <div id="wrapper">
 
          <!-- Navigation -->
@@ -135,13 +132,12 @@
                             <div class="dataTable_wrapper">
 
                             <?php
-								$acoes = new ClienteQuartosDAO();
-								
-								echo $acoes;
-								
-								$acoes->visualizar();  
-                            ?>
+							  include "dao/ClienteQuartosDAO.php";
 
+							  echo "<br> construiu? <br> ";
+							  $acoes = new ClienteQuartosDAO();
+							  $acoes->visualizar();
+						  ?>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
