@@ -13,9 +13,14 @@
                                             , $idcliente
                                             , $descricao
                                             , $valor_hora  );
-        echo $clientequartos;
+        // echo $clientequartos;
 
         $acoes = new ClienteQuartosDAO();
         $acoes->inserir($clientequartos);
+		
+		echo "<script>";
+			echo "alert('Cliente adicionado com sucesso!');
+			window.location.href='conQuarto.php';
+			</script>";
 	}
 ?>
