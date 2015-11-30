@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>    
+<head>
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>Motel Senac</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- MetisMenu CSS -->
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
     <!-- DataTables CSS -->
     <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
     <!-- DataTables Responsive CSS -->
     <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,6 +36,7 @@
     <![endif]-->
 
 </head>
+
 <body>
 
     <div id="wrapper">
@@ -89,21 +98,21 @@
                     <a href="cadCliente.html"> Cadastro Clientes</a>
                   </li>
                   <li>
-                    <a href="cadQuarto.php"> Cadastro Quartos </a>
+                    <a href="cadQuarto.html"> Cadastro Quartos </a>
                   </li>
                 </ul>
                 <!-- /.nav-second-level -->
               </li>
         <li>
-            <a href="relatorio.html"><i class="fa fa-dashboard fa-fw"></i> Consulta <span class="fa arrow"></span></a> </a>
-            <ul class="nav nav-second-level">
-                <li>
-                    <a href="conCliente.html"> Consulta Clientes</a>
-                </li>
-                <li>
-                    <a href="conQuarto.html"> Consulta Quartos </a>
-                </li>
-            </ul>
+                <a href="relatorio.html"><i class="fa fa-dashboard fa-fw"></i> Consulta <span class="fa arrow"></span></a> </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="conCliente.html"> Consulta Clientes</a>
+                    </li>
+                    <li>
+                        <a href="conQuarto.html"> Consulta Quartos </a>
+                    </li>
+                </ul>
         </li>
             </ul>
           </div>
@@ -116,7 +125,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Quarto</h1>
+                    <h1 class="page-header">Consulta Cliente</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -125,17 +134,16 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Quarto
+                            Clientes
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-
-                            <?php
-							  include "dao/ClienteQuartosDAO.php";
-							  $acoes = new ClienteQuartosDAO();
-							  $acoes->visualizar();
-						  ?>
+                                <?php
+                                    include "dao/ClienteDAO.php";
+                                    $acoes = new ClienteDAO();
+                                    $acoes->visualizar();
+                                ?>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
