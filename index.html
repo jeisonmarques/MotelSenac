@@ -160,7 +160,7 @@
                     <h3 id="tituloModal"></h3>
                     <p id="descricaoModal"></p>
                     <p id="enderecoModal"></p>
-                    <p id="avaliacoes"></p>
+                    <div id="avaliacoes"></div>
                     <p id="fotos"></p>
                 </div>
                 <div class="modal-footer">
@@ -228,7 +228,28 @@
                         document.getElementById("tituloModal").innerHTML = dataModal.RetornaMotelResult.NomeMotel;
                         document.getElementById("descricaoModal").innerHTML = dataModal.RetornaMotelResult.descricao;
                         document.getElementById("enderecoModal").innerHTML = "Endereço: "+ dataModal.RetornaMotelResult.end_logradouro +" - "+ dataModal.RetornaMotelResult.end_numero+"</br>Bairro: "+ dataModal.RetornaMotelResult.end_bairro +"</br>Cidade: "+ dataModal.RetornaMotelResult.end_cidade;
-                        document.getElementById("avaliacoes").innerHTML = dataModal.RetornaMotelResult.NomeMotel;
+                        document.getElementById("avaliacoes").innerHTML = dataModal.RetornaMotelResult.listaDeAvaliacoes.length;
+
+                        for (var i = 0; i < dataModal.RetornaMotelResult.listaDeAvaliacoes.length; i++) {
+                            var avaliacao = document.createElement('p');
+                            avaliacao.setAttribute('id', "avaliacao"+i);
+
+                            document.getElementById("avaliacoes").appendChild(avaliacao);
+
+                            document.getElementById("avaliacao"+i).innerHTML = "Nome: "+dataModal.RetornaMotelResult.listaDeAvaliacoes[i].Nome +"</br>Email: "+dataModal.RetornaMotelResult.listaDeAvaliacoes[i].Email +"</br>Texto: "+dataModal.RetornaMotelResult.listaDeAvaliacoes[i].AvaliacaoTexto +"</br>Nota:"+dataModal.RetornaMotelResult.listaDeAvaliacoes[i].Nota;
+                        }
+
+
+                        for (var i = 0; i < dataModal.RetornaMotelResult.listaDeFotos.length; i++) {
+                            var caminho = dataModal.RetornaMotelResult.listaDeFotos[i].Url;
+                            var img = document.createElement('img');
+                            img.setAttribute('src', caminho);
+                            img.setAttribute('width', '200px');
+                            img.setAttribute('height', '200px');
+                            img.setAttribute('style', 'padding:10px');
+                            
+                            document.getElementById("fotos").appendChild(img);
+                        }
 
                     });
             }
@@ -274,7 +295,7 @@
 
                                     + '<button type="button" onclick="modalClick('+data.GeraRotaResult[i].IdMotel+')"'
                                     + 'data-toggle="modal" '
-                                    + 'data-target="#basicModal">Click to open Modal</button></div>';
+                                    + 'data-target="#basicModal">Detalhes</button></div>';
                                
                                 var infowindow = new google.maps.InfoWindow();
 
