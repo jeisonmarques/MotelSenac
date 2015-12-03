@@ -89,7 +89,7 @@
                     <a href="cadCliente.html"> Cadastro Clientes</a>
                   </li>
                   <li>
-                    <a href="cadQuarto.php"> Cadastro Quartos </a>
+                    <a href="cadQuarto.html"> Cadastro Quartos </a>
                   </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -98,10 +98,10 @@
             <a href="relatorio.html"><i class="fa fa-dashboard fa-fw"></i> Consulta <span class="fa arrow"></span></a> </a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="conCliente.html"> Consulta Clientes</a>
+                    <a href="conCliente.php"> Consulta Clientes</a>
                 </li>
                 <li>
-                    <a href="conQuarto.html"> Consulta Quartos </a>
+                    <a href="conQuarto.php"> Consulta Quartos </a>
                 </li>
             </ul>
         </li>
