@@ -46,20 +46,17 @@ class ClienteDAO extends BancoPDO {
 
             if($stm->execute()) {
                 $tabela = "<table class="table table-striped table-bordered table-hover" id="dataTables-example"><tr>"
-                        ."<td>nome</td>"
-                        ."<td>cnpj</td>"
-                        ."<td>end_logradouro</td>"
-                        ."<td>end_numero</td>"
-                        ."<td>end_bairro</td>"
-                        ."<td>end_cidade</td>"
-                        ."<td>end_cep</td>"
-                        ."<td>latidade</td>"
-                        ."<td>longitude</td>"
-                        ."<td>email</td>"
-                        ."<td>senha</td>"
-                        ."<td>ativo</td>"
-                        ."<td>foto</td>"
-                        ."<td>descricao</td>"
+                        ."<td>Nome</td>"
+                        ."<td>CNPJ</td>"
+                        ."<td>Rua</td>"
+                        ."<td>Numero</td>"
+                        ."<td>Bairro</td>"
+                        ."<td>Cidade</td>"
+                        ."<td>CEP</td>"
+                        ."<td>Latidade</td>"
+                        ."<td>Longitude</td>"
+                        ."<td>Email</td>"                        
+                        ."<td>ativo</td>"                        
                         ."</tr>";
                 while($dados = $stm->fetch(PDO::FETCH_OBJ)) {
                    $tabela .= "<tr>"
@@ -70,15 +67,11 @@ class ClienteDAO extends BancoPDO {
                                 ."<td>".$dados->end_bairro."</td>"
                                 ."<td>".$dados->end_cidade."</td>"
                                 ."<td>".$dados->end_cep."</td>"
-                                ."<td>".$dados->latidade."</td>"
+                                ."<td>".$dados->latitude."</td>"
                                 ."<td>".$dados->longitude."</td>"
-                                ."<td>".$dados->email."</td>"
-                                ."<td>".$dados->senha."</td>"
-                                ."<td>".$dados->ativo."</td>"
-                                ."<td>".$dados->foto."</td>"
-                                ."<td>".$dados->descricao."</td>"
-                             ."<td><a href='cadCliente.html?acao=editar&id=".$dados->id."'>Editar</a></td>"
-                             ."</tr>"; 
+                                ."<td>".$dados->email."</td>"                                
+                                ."<td>".$dados->ativo."</td>"                                                                                          
+                                ."</tr>"; 
                 }
                 $tabela .= "</table>";
                 echo $tabela;
