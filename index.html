@@ -228,7 +228,7 @@
                         document.getElementById("tituloModal").innerHTML = dataModal.RetornaMotelResult.NomeMotel;
                         document.getElementById("descricaoModal").innerHTML = dataModal.RetornaMotelResult.descricao;
                         document.getElementById("enderecoModal").innerHTML = "Endereço: "+ dataModal.RetornaMotelResult.end_logradouro +" - "+ dataModal.RetornaMotelResult.end_numero+"</br>Bairro: "+ dataModal.RetornaMotelResult.end_bairro +"</br>Cidade: "+ dataModal.RetornaMotelResult.end_cidade;
-                        document.getElementById("avaliacoes").innerHTML = dataModal.RetornaMotelResult.listaDeAvaliacoes.length;
+                        
 
                         for (var i = 0; i < dataModal.RetornaMotelResult.listaDeAvaliacoes.length; i++) {
                             var avaliacao = document.createElement('p');
