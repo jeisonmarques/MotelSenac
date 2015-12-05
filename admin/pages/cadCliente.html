@@ -251,12 +251,14 @@
         if (valor.erro) {
           document.getElementById('cep').focus();
           alert('Cep não encontrado');          
-        } else if (valor.logradouro != "") {
+        } 
+        if (valor.logradouro != "") {
           document.getElementById('rua').value=valor.logradouro
           document.getElementById('bairro').value=valor.bairro
           document.getElementById('cidade').value=valor.localidade
           document.getElementById('estado').value=valor.uf  
-        } else if (valor.bairro = "Bairro") {
+        } 
+        if (valor.bairro = "Bairro") {
           document.getElementById('rua').disabled = false;
           document.getElementById('bairro').disabled = false;
           document.getElementById('rua').focus();
