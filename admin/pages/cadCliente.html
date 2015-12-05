@@ -252,16 +252,18 @@
           document.getElementById('cep').focus();
           alert('Cep não encontrado');          
           return;
-        } else if (valor.logradouro != "") {
+        };
+        if (valor.logradouro != "") {
           document.getElementById('rua').value=valor.logradouro.disabled=true;
           document.getElementById('bairro').value=valor.bairro.disabled=true;
           document.getElementById('cidade').value=valor.localidade.disabled=true;
           document.getElementById('estado').value=valor.uf.disabled=true;
-        } else if (valor.bairro = "Bairro") {
+        };
+        if (valor.bairro = "Bairro") {
           document.getElementById('rua').disabled = false;
           document.getElementById('bairro').disabled = false;
           document.getElementById('rua').focus();
-        }
+        };
       }
     </script>
     <script type="text/javascript">
