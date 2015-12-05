@@ -250,8 +250,8 @@
       function correiocontrolcep(valor){
         if (valor.erro) {
           alert('Cep não encontrado');
-          return;
           document.getElementById('cep').focus();
+          return;          
         } else if (valor.logradouro != "") {
           document.getElementById('rua').value=valor.logradouro
           document.getElementById('bairro').value=valor.bairro
