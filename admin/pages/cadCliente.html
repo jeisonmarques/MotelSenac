@@ -251,6 +251,7 @@
         if (valor.erro) {
           alert('Cep não encontrado');
           return;
+          document.getElementById('cep').focus();
         };        
         document.getElementById('rua').value=valor.logradouro
         document.getElementById('bairro').value=valor.bairro
