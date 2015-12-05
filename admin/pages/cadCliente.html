@@ -252,10 +252,16 @@
           alert('Cep não encontrado');
           return;
         } else {
-            document.getElementById('rua').value=valor.logradouro
-            document.getElementById('bairro').value=valor.bairro
-            document.getElementById('cidade').value=valor.localidade
-            document.getElementById('estado').value=valor.uf
+            if (valor.bairro = "Bairro") {
+              document.getElementById('rua').disabled=false;
+              document.getElementById('bairro').disabled=false;              
+
+            } else {
+                document.getElementById('rua').value=valor.logradouro
+                document.getElementById('bairro').value=valor.bairro
+                document.getElementById('cidade').value=valor.localidade
+                document.getElementById('estado').value=valor.uf
+              }
         }        
       }
     </script>
