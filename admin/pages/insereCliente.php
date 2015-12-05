@@ -1,4 +1,6 @@
 <?
+var_dump ($nome);
+
 require "classes/classCliente.php";
 
 $nome = $_POST["nome"];
