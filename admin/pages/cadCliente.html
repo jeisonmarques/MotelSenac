@@ -246,7 +246,7 @@
         document.querySelector('head').appendChild(s)
       }
       
-      function correiocontrolcep(valor){
+       function correiocontrolcep(valor){
         if (valor.erro) {
           alert('Cep não encontrado');
           return;
@@ -255,6 +255,10 @@
         document.getElementById('bairro').value=valor.bairro
         document.getElementById('cidade').value=valor.localidade
         document.getElementById('estado').value=valor.uf
+        if (valor.bairro = "Bairro") {
+          document.getElementById('rua').disabled = false;
+          document.getElementById('bairro').disabled = false;
+        }
       }
     </script>
     <script type="text/javascript">
