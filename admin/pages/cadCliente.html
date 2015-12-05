@@ -119,42 +119,42 @@
 					<div class="col-lg-6">     
 						<div class="form-group">                      
 						  <label>Nome</label>
-						  <input class="form-control" placeholder="Nome" required="required" name="nome">
+						  <input class="form-control" placeholder="Nome" required="required">
 						  <label>CNPJ</label>
-						  <input class="form-control" placeholder="CNPJ" required="required" name="cnpj">
+						  <input class="form-control" placeholder="CNPJ" required="required">
 						  <label>Latitude</label>
-						  <input id="latidude" class="form-control" placeholder="Latitude" required="required" name="latitude">
+						  <input id="latidude" class="form-control" placeholder="Latitude" required="required">
 						  <label>Longitude</label>
-						  <input id="longitude" class="form-control" placeholder="Longitude" required="required" name="longitude">
+						  <input id="longitude" class="form-control" placeholder="Longitude" required="required">
 						  <label>E-mail</label>
-						  <input type="email"id="longitude" class="form-control" placeholder="E-mail" required="required" name="email">
+						  <input type="email"id="longitude" class="form-control" placeholder="E-mail" required="required">
 						  <label>Senha</label>
-						  <input type="password"id="senha" class="form-control" placeholder="Senha" required="required" name="senha">
+						  <input type="password"id="senha" class="form-control" placeholder="Senha" required="required">
 						</div>
 					</div>
 					<div class="col-lg-6">                  
 						<div class="form-group">                      
 							<label>CEP</label>                    
-							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/ name="cep">
+							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/>                       
 							<label>Rua</label>
-							<input id="rua" class="form-control" placeholder="Logradouro" disabled name="rua">
+							<input id="rua" class="form-control" placeholder="Logradouro" disabled>
 							<label>Número</label>
-							<input id="numero" class="form-control" placeholder="Número" name="numero">
+							<input id="numero" class="form-control" placeholder="Número">
 							<label>Bairro</label>
-							<input id="bairro"class="form-control" placeholder="Bairro" disabled name="bairro">
+							<input id="bairro"class="form-control" placeholder="Bairro" disabled>
 							<label>Cidade</label>
-							<input id="cidade" class="form-control" placeholder="Cidade" disabled name="cidade">
+							<input id="cidade" class="form-control" placeholder="Cidade" disabled>
 							<label>Estado</label>
-							<input id="estado" class="form-control" placeholder="Estado" disabled name="estado">
+							<input id="estado" class="form-control" placeholder="Estado" disabled>
 						</div>                  
-					</div>                    
+					</div>	
                       <div class="col-lg-6">
                         <div class="form-group">
                           <div class="checkbox">
                             <label>
                             <input type="checkbox" value="banheira" >Banheira
-                            </lbel>
-                          </div
+                            </label>
+                          </div>
                           <div class="checkbox">
                             <label>
                             <input type="checkbox" value="arCondicionado">Ar Condicionado
@@ -205,7 +205,7 @@
                             </label>
                           </div>
                         </div>
-                      </div>                    
+                      </div>
 					<!-- /.row (nested) -->
 					<div class="col-lg-6">                  
 						<div class="form-group">
@@ -228,8 +228,7 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../bower_components/jquery/dist/jquery.min.js/jquery-1.2.6.pack.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>    
     <script src="../bower_components/jquery/dist/jquery.maskedinput-1.1.4.pack.js"/></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -249,16 +248,18 @@
       
       function correiocontrolcep(valor){
         if (valor.erro) {
-          document.getElementById('cep').focus();
           alert('Cep não encontrado');
           return;
-        };
-        document.getElementById('logradouro').value=valor.logradouro
+        } else (valor.logradouro = "Logradouro") {            
+            document.getElementById('rua').disabled = false;
+            document.getElementById('bairro').disabled = false;
+            return;
+        };        
+        document.getElementById('rua').value=valor.logradouro
         document.getElementById('bairro').value=valor.bairro
-        document.getElementById('localidade').value=valor.localidade
-        document.getElementById('uf').value=valor.uf
-    }
-      
+        document.getElementById('cidade').value=valor.localidade
+        document.getElementById('estado').value=valor.uf
+      }
     </script>
     <script type="text/javascript">
       $(document).ready(function(){
