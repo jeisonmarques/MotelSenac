@@ -249,6 +249,7 @@
       
       function correiocontrolcep(valor){
         if (valor.erro) {
+          document.getElementById('cep').focus();
           alert('Cep não encontrado');
           return;
         };
