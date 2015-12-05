@@ -253,8 +253,9 @@
           return;
         } else {
             if (valor.bairro = "Bairro") {
-              document.getElementById('rua').disabled=false.focus();
+              document.getElementById('rua').disabled=false;
               document.getElementById('bairro').disabled=false;              
+              return document.getElementById('rua').focus();
 
             } else {
                 document.getElementById('rua').value=valor.logradouro
