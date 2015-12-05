@@ -252,12 +252,13 @@
           alert('Cep não encontrado');
           return;
         } else {
-            if (valor.bairro = "Bairro") {
+            document.getElementById('bairro').value=valor.bairro
+            if (document.getElementById('bairro') = "Bairro") {
               alert(valor.bairro + "teste");
               return;
             } else {
-              document.getElementById('rua').value=valor.logradouro
               document.getElementById('bairro').value=valor.bairro
+              document.getElementById('rua').value=valor.logradouro              
               document.getElementById('cidade').value=valor.localidade
               document.getElementById('estado').value=valor.uf
             }
