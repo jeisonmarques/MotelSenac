@@ -248,14 +248,14 @@
       }
       
       function correiocontrolcep(valor){
-      if (valor.erro) {
-        alert('Cep não encontrado');
-        return;
-      };
-      document.getElementById('logradouro').value=valor.logradouro
-      document.getElementById('bairro').value=valor.bairro
-      document.getElementById('localidade').value=valor.localidade
-      document.getElementById('uf').value=valor.uf
+        if (valor.erro) {
+          alert('Cep não encontrado');
+          return;
+        };
+        document.getElementById('logradouro').value=valor.logradouro
+        document.getElementById('bairro').value=valor.bairro
+        document.getElementById('localidade').value=valor.localidade
+        document.getElementById('uf').value=valor.uf
     }
       
     </script>
