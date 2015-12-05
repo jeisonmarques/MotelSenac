@@ -1,5 +1,5 @@
 <?
-require "classes/classUsuarios.php";
+require "classes/classCliente.php";
 
 $nome = $_POST["nome"];
 $cnpj = $_POST["cnpj"];
@@ -13,7 +13,7 @@ $end_numero = $_POST["end_numero"];
 $end_bairro = $_POST["end_bairro"];
 $end_cidade = $_POST["end_cidade"];
 
-$a = new usuarios;
+$a = new cliente;
 $a->setnome($nome);
 $a->setcnpj($cnpj);
 $a->setend_logradouro($end_logradouro);
