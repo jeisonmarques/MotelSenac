@@ -135,7 +135,7 @@
 					<div class="col-lg-6">                  
 						<div class="form-group">                      
 							<label>CEP</label>                    
-							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/>                       
+							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/>                      
 							<label>Rua</label>
 							<input id="rua" class="form-control" placeholder="Logradouro" disabled>
 							<label>Número</label>
@@ -250,10 +250,6 @@
         if (valor.erro) {
           alert('Cep não encontrado');
           return;
-        } else (valor.logradouro = "Logradouro") {            
-            document.getElementById('rua').disabled = false;
-            document.getElementById('bairro').disabled = false;
-            return;
         };        
         document.getElementById('rua').value=valor.logradouro
         document.getElementById('bairro').value=valor.bairro
