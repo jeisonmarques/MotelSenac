@@ -119,33 +119,33 @@
 					<div class="col-lg-6">     
 						<div class="form-group">                      
 						  <label>Nome</label>
-						  <input class="form-control" placeholder="Nome" required="required">
+						  <input class="form-control" placeholder="Nome" required="required" name="nome">
 						  <label>CNPJ</label>
-						  <input class="form-control" placeholder="CNPJ" required="required">
+						  <input class="form-control" placeholder="CNPJ" required="required" name="cnpj">
 						  <label>Latitude</label>
-						  <input id="latidude" class="form-control" placeholder="Latitude" required="required">
+						  <input id="latidude" class="form-control" placeholder="Latitude" required="required" name="latitude">
 						  <label>Longitude</label>
-						  <input id="longitude" class="form-control" placeholder="Longitude" required="required">
+						  <input id="longitude" class="form-control" placeholder="Longitude" required="required" name="longitude">
 						  <label>E-mail</label>
-						  <input type="email"id="longitude" class="form-control" placeholder="E-mail" required="required">
+						  <input type="email"id="longitude" class="form-control" placeholder="E-mail" required="required" name="email">
 						  <label>Senha</label>
-						  <input type="password"id="senha" class="form-control" placeholder="Senha" required="required">
+						  <input type="password"id="senha" class="form-control" placeholder="Senha" required="required" name="senha">
 						</div>
 					</div>
 					<div class="col-lg-6">                  
 						<div class="form-group">                      
 							<label>CEP</label>                    
-							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/>                       
+							<input id="cep" class="form-control" placeholder="CEP" onblur="atualizacep(this.value)"/ name="cep">
 							<label>Rua</label>
-							<input id="rua" class="form-control" placeholder="Logradouro" disabled>
+							<input id="rua" class="form-control" placeholder="Logradouro" disabled name="rua">
 							<label>Número</label>
-							<input id="numero" class="form-control" placeholder="Número">
+							<input id="numero" class="form-control" placeholder="Número" name="numero">
 							<label>Bairro</label>
-							<input id="bairro"class="form-control" placeholder="Bairro" disabled>
+							<input id="bairro"class="form-control" placeholder="Bairro" disabled name="bairro">
 							<label>Cidade</label>
-							<input id="cidade" class="form-control" placeholder="Cidade" disabled>
+							<input id="cidade" class="form-control" placeholder="Cidade" disabled name="cidade">
 							<label>Estado</label>
-							<input id="estado" class="form-control" placeholder="Estado" disabled>
+							<input id="estado" class="form-control" placeholder="Estado" disabled name="estado">
 						</div>                  
 					</div>	
                       <div class="col-lg-6">
@@ -251,11 +251,15 @@
         if (valor.erro) {
           alert('Cep não encontrado');
           return;
-        };
+        };        
         document.getElementById('rua').value=valor.logradouro
         document.getElementById('bairro').value=valor.bairro
         document.getElementById('cidade').value=valor.localidade
         document.getElementById('estado').value=valor.uf
+        if (valor.bairro = "Bairro") {
+          document.getElementById('rua').disabled = false;
+          document.getElementById('bairro').disabled = false;
+        }
       }
     </script>
     <script type="text/javascript">
