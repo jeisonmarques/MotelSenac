@@ -197,7 +197,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div id="quarto4"class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
@@ -245,6 +245,15 @@
     <script>
     function abrir() {
         window.open("quartoLivre.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=200, left=500, width=400, height=400");
+    }
+    function muda(){
+        classe = document.getElementById('quarto4').className; 
+        if(classe == 'panel panel-green'){
+           document.getElementById('quarto4').className = 'panel panel-red';
+        }
+        else{
+           document.getElementById('quarto4').className = 'panel panel-green';
+       }
     }
     </script>
 </body>
