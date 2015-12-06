@@ -251,15 +251,21 @@
           document.getElementById('cep').focus();
           alert('Cep não encontrado');
           return;
-        } else {
-            if (valor.bairro = "7777") {
-              alert(valor.bairro);              
-            } else {
-              document.getElementById('rua').value=valor.logradouro
-              document.getElementById('bairro').value=valor.bairro
-              document.getElementById('cidade').value=valor.localidade
-              document.getElementById('estado').value=valor.uf
-            }
+        } 
+        else {
+              if (valor.bairro == "") {
+                document.getElementById('rua').disabled=false;
+                document.getElementById('bairro').disabled=false;
+                document.getElementById('cidade').value=valor.localidade;
+                document.getElementById('estado').value=valor.uf;
+                document.getElementById('rua').focus();
+              }             
+              else {
+                document.getElementById('rua').value=valor.logradouro
+                document.getElementById('bairro').value=valor.bairro
+                document.getElementById('cidade').value=valor.localidade
+                document.getElementById('estado').value=valor.uf            
+              } 
           }           
       }        
       
@@ -269,5 +275,4 @@
       	$("#cep").mask("99999-999");
       });
     </script>
-  </body>
-</html>
+  </body>valor.bairrotml>valor.bairro 
