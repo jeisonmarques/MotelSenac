@@ -130,12 +130,11 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-
-                            <?php
-							  include "dao/ClienteQuartosDAO.php";
-							  $acoes = new ClienteQuartosDAO();
-							  $acoes->visualizar();
-						  ?>
+                              <?php
+              							   include "dao/ClienteQuartosDAO.php";
+              							   $acoes = new ClienteQuartosDAO();
+              							   $acoes->visualizar();
+              						    ?>
                             </div>
                             <!-- /.table-responsive -->
                         </div>

@@ -139,11 +139,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <?php
-                                    include "dao/ClienteDAO.php";
-                                    $acoes = new ClienteDAO();
-                                    $acoes->visualizar();
-                                ?>
+                                
                             </div>
                             <!-- /.table-responsive -->
                         </div>
