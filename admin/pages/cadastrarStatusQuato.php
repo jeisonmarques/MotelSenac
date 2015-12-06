@@ -1,5 +1,4 @@
 <?
-
 echo "<script>";
 		window.closedir();
 		echo " alert('Quarto Ocupado');      
