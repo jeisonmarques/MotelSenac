@@ -137,8 +137,7 @@
                                         <i class="fa fa-smile-o fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">Quarto 1</div>
-                                        <div class="hugeInterno">Ocupado</div>
+                                        <div class="huge">Quarto 1</div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -159,8 +158,7 @@
                                         <i class="fa fa-frown-o fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">Quarto 2</div>
-                                        <div class="hugeInterno">Livre</div>
+                                        <div class="huge">Quarto 2</div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -182,8 +180,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <form method="post" action="quartoLivre.php">
-                                            <div class="huge">Quarto 3</div>
-                                            <div class="hugeInterno">Ocupado</div>
+                                            <div class="huge">Quarto 3</div>                                            
                                         </form>
                                     </div>
                                 </div>
@@ -202,11 +199,10 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-frown-o fa-5x"></i>
+                                        <i id="sorriso"class="fa fa-frown-o fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">Quarto 4</div>
-                                        <div class="hugeInterno">Livre</div>
+                                        <div class="huge">Quarto 4</div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -249,10 +245,12 @@
     function muda(){
         classe = document.getElementById('quarto4').className; 
         if(classe == 'panel panel-green'){
-           document.getElementById('quarto4').className = 'panel panel-red';
+           document.getElementById('quarto4').className = 'panel panel-red';           
+           document.getElementById('sorriso').className =  'fa fa-smile-o fa-5x';
         }
         else{
-           document.getElementById('quarto4').className = 'panel panel-green';
+           document.getElementById('quarto4').className = 'panel panel-green'; 
+           document.getElementById('sorriso').className = 'fa fa-frown-o fa-5x';
        }
     }
     </script>
