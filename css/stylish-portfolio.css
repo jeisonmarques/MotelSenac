@@ -16,6 +16,11 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.checkboxindex{
+    margin-top: 13px !important;
+}
+
+
 h4#myModalLabel {
     color: black !important;
 }
@@ -93,7 +98,7 @@ hr.small {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 300px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -160,7 +165,8 @@ hr.small {
 
 #sidebar-wrapper.active {
     right: 250px;
-    width: 250px;
+    width: 350px !important;
+    color: white !important;
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -ms-transition: all 0.4s ease 0s;

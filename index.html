@@ -58,6 +58,59 @@
             <li>
                 <a href="#portfolio" onclick = $("#menu-close").click(); >Área Restrita</a>
             </li>
+            <li>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="banheira" class="checkboxindex" id="banheira">Banheira
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="arCondicionado" class="checkboxindex" id="ar">Ar Condicionado
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="lareira" class="checkboxindex" id="lareira">Lareira
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="sauna" class="checkboxindex" id="sauna">Sauna
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cadeiraErotica" class="checkboxindex" id="cadeira">Cadeira Erótica
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="frigobar" class="checkboxindex" id="frigobar">Frigobar
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="luzNegra" class="checkboxindex" id="luznegra">Luz Negra
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="canaisEroticos" class="checkboxindex" id="canais">Canais Eróticos
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="quartosTematicos" class="checkboxindex" id="tematico">Quarto Temático
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="poleDance" class="checkboxindex" id="poledance">Pole Dance
+                    </label>
+                </div>
+                <button class="btn btn-success btn-block" onclick="buscarMoteis()">Buscar</button>
+            </li>
         </ul>
     </nav>
 
@@ -219,6 +272,36 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
+
+            function buscarMoteis() {
+                var dadosBusca = {
+                    "banheira": document.getElementById("banheira").value,
+                    "ar": document.getElementById("ar").value,
+                    "lareira": document.getElementById("lareira").value,
+                    "sauna": document.getElementById("sauna").value,
+                    "cadeira": document.getElementById("cadeira").value,
+                    "frigobar": document.getElementById("frigobar").value,
+                    "luznegra": document.getElementById("luznegra").value,
+                    "canais": document.getElementById("canais").value,
+                    "tematico": document.getElementById("tematico").value,
+                    "poledance": document.getElementById("poledance").value
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "http://api-motel.azurewebsites.net/Roteirizador.svc/buscarMoteis",
+                    data: JSON.stringify(dadosBusca),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    processData: true,
+                    success: function (data, status, jqXHR) {
+                        alert("success..." + data);
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseText);
+                    }
+                });
+            }
+
             function modalClick(id) {
                     console.log('teste ok ' + id);
                     var urlModal = "http://api-motel.azurewebsites.net/motel.svc/" + id;
