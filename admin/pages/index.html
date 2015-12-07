@@ -130,11 +130,11 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-smile-o fa-5x"></i>
+                                        <i id="sorriso1" class="glyphicon glyphicon-ok fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">Quarto 1</div>                                        
@@ -155,7 +155,7 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-frown-o fa-5x"></i>
+                                        <i id="sorriso2" class="glyphicon glyphicon-ok fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">Quarto 2</div>                                        
@@ -172,16 +172,14 @@
                         </div>
                     </div>                    
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-smile-o fa-5x"></i>
+                                        <i id="sorriso3" class="glyphicon glyphicon-ok fa-5x"></i>
                                     </div>
-                                    <div class="col-xs-9 text-right">
-                                        <form method="post" action="quartoLivre.php">
-                                            <div class="huge">Quarto 3</div>                                            
-                                        </form>
+                                    <div class="col-xs-9 text-right">                                        
+                                            <div class="huge">Quarto 3</div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -195,11 +193,11 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div id="quarto4" class="panel panel-green" onclick="muda();">
+                        <div id="quarto4" class="panel panel-green" onclick="muda4();">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i id="sorriso"class="fa fa-frown-o fa-5x"></i>
+                                        <i id="sorriso4" class="glyphicon glyphicon-ok fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">Quarto 4</div>                                        
@@ -242,15 +240,50 @@
     function abrir() {
         window.open("quartoLivre.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=200, left=500, width=400, height=400");
     }
-    function muda(){
-        classe = document.getElementById('quarto4').className; 
-        if(classe == 'panel panel-green'){
+    function muda1(){        
+        quarto1 = document.getElementById('quarto1').className;         
+        if(quarto1 == 'panel panel-green') {
+           document.getElementById('quarto1').className = 'panel panel-red';           
+           document.getElementById('sorriso1').className =  'glyphicon glyphicon-remove fa-5x';
+        }
+        else{
+           document.getElementById('quarto1').className = 'panel panel-green'; 
+           document.getElementById('sorriso1').className = 'glyphicon glyphicon-ok fa-5x';
+       }
+    }
+
+    function muda2() {
+        quarto2 = document.getElementById('quarto2').className;        
+       if(quarto2 == 'panel panel-green') {
+           document.getElementById('quarto2').className = 'panel panel-red';           
+           document.getElementById('sorriso2').className =  'glyphicon glyphicon-remove fa-5x';
+        }
+        else{
+           document.getElementById('quarto2').className = 'panel panel-green'; 
+           document.getElementById('sorriso2').className = 'glyphicon glyphicon-ok fa-5x';
+       }
+    }
+     function muda3() {
+        quarto3 = document.getElementById('quarto3').className;        
+       if(quarto3 == 'panel panel-green') {
+           document.getElementById('quarto3').className = 'panel panel-red';           
+           document.getElementById('sorriso3').className =  'glyphicon glyphicon-remove fa-5x';
+        }
+        else{
+           document.getElementById('quarto3').className = 'panel panel-green'; 
+           document.getElementById('sorriso3').className = 'glyphicon glyphicon-ok fa-5x';
+       }
+    }
+     function muda4() {
+        quarto4 = document.getElementById('quarto4').className;        
+       if(quarto4 == 'panel panel-green') {
            document.getElementById('quarto4').className = 'panel panel-red';           
-           document.getElementById('sorriso').className =  'fa fa-smile-o fa-5x';
+           document.getElementById('sorriso4').className =  'glyphicon glyphicon-remove fa-5x';
+           hugeInterno.getElementById(hugeInterno).className = 'panel-green';
         }
         else{
            document.getElementById('quarto4').className = 'panel panel-green'; 
-           document.getElementById('sorriso').className = 'fa fa-frown-o fa-5x';
+           document.getElementById('sorriso4').className = 'glyphicon glyphicon-ok fa-5x';           
        }
     }
     </script>
