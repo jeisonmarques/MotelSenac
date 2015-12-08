@@ -275,20 +275,63 @@
 
             function buscarMoteis() {
                 var dadosBusca = {
-                    "banheira": document.getElementById("banheira").value,
-                    "ar": document.getElementById("ar").value,
-                    "lareira": document.getElementById("lareira").value,
-                    "sauna": document.getElementById("sauna").value,
-                    "cadeira": document.getElementById("cadeira").value,
-                    "frigobar": document.getElementById("frigobar").value,
-                    "luznegra": document.getElementById("luznegra").value,
-                    "canais": document.getElementById("canais").value,
-                    "tematico": document.getElementById("tematico").value,
-                    "poledance": document.getElementById("poledance").value
+                    "banheira": false,
+                    "ar": false,
+                    "lareira": false,
+                    "sauna": false,
+                    "cadeira": false,
+                    "frigobar": false,
+                    "luznegra": false,
+                    "canais": false,
+                    "tematico": false,
+                    "poledance": false
                 };
+
+
+                var banheira = document.getElementById("banheira");
+                if(banheira.checked) {
+                    dadosBusca.banheira = true;
+                }
+                var ar = document.getElementById("ar");
+                if(ar.checked) {
+                    dadosBusca.ar = true;
+                }
+                var lareira = document.getElementById("lareira");
+                if(lareira.checked) {
+                    dadosBusca.lareira = true;
+                }
+                var sauna = document.getElementById("sauna");
+                if(sauna.checked) {
+                    dadosBusca.sauna = true;
+                }
+                var cadeira = document.getElementById("cadeira");
+                if(cadeira.checked) {
+                    dadosBusca.cadeira = true;
+                }
+                var frigobar = document.getElementById("frigobar");
+                if(frigobar.checked) {
+                    dadosBusca.frigobar = true;
+                }
+                var luznegra = document.getElementById("luznegra");
+                if(luznegra.checked) {
+                    dadosBusca.banheira = true;
+                }
+                var canais = document.getElementById("canais");
+                if(canais.checked) {
+                    dadosBusca.canais = true;
+                }
+                var tematico = document.getElementById("tematico");
+                if(tematico.checked) {
+                    dadosBusca.tematico = true;
+                }
+                var poledance = document.getElementById("poledance");
+                if(poledance.checked) {
+                    dadosBusca.poledance = true;
+                }
+       
                 $.ajax({
                     type: "POST",
-                    url: "http://api-motel.azurewebsites.net/Roteirizador.svc/buscarMoteis",
+                    url: "http://api-motel.azurewebsites.net/Roteirizador.svc/mapaFiltrado",
                     data: JSON.stringify(dadosBusca),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
