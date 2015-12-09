@@ -403,21 +403,21 @@
                         infoWindow.setContent('Você esta aqui !');
                         map.setCenter(pos);
 
-                            for (var i = 0; i < data.GeraRotaResult.length; i++) {
+                            for (var i = 0; i < data.length; i++) {
 
                                 if (i == 0) {
                                     var destino = {
-                                        lat: data.GeraRotaResult[i].Latitude,
-                                        lng: data.GeraRotaResult[i].Longitude
+                                        lat: data[i].Latitude,
+                                        lng: data[i].Longitude
                                     };
                                     calculateAndDisplayRoute(directionsService, directionsDisplay, pos, destino);
                                 }
                                 else
                                 {
                                     var contentString = '<div id="content">'
-                                            + data.GeraRotaResult[i].NomeMotel + '</br>'
+                                            + data[i].NomeMotel + '</br>'
 
-                                            + '<button type="button" onclick="modalClick('+data.GeraRotaResult[i].IdMotel+')"'
+                                            + '<button type="button" onclick="modalClick('+data[i].IdMotel+')"'
                                             + 'data-toggle="modal" '
                                             + 'data-target="#basicModal">Detalhes</button></div>';
 
@@ -425,9 +425,9 @@
 
 
                                     var marker = new google.maps.Marker({
-                                        'position': new google.maps.LatLng(data.GeraRotaResult[i].Latitude, data.GeraRotaResult[i].Longitude),
+                                        'position': new google.maps.LatLng(data[i].Latitude, data[i].Longitude),
                                         'map': map,
-                                        'title': data.GeraRotaResult[i].Nome
+                                        'title': data[i].Nome
                                     });
 
                                     createInfoWindow(marker, contentString);
